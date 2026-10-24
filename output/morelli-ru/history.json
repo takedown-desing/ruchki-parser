@@ -1,5 +1,23 @@
 [
  {
+  "when": "2026-10-24 05:09",
+  "ok": true,
+  "how": "страницы сайта",
+  "models": 3,
+  "variants": 3,
+  "images": 6,
+  "no_price": 0,
+  "no_photo": 0,
+  "changes": {
+   "new": 0,
+   "gone": 0,
+   "price": 0,
+   "stock": 0
+  },
+  "seconds": 32,
+  "warnings": []
+ },
+ {
   "when": "2026-10-24 11:24",
   "ok": true,
   "how": "страницы сайта",

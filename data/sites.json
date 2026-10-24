@@ -1082,7 +1082,7 @@
   "feed_kind": "",
   "mapping": {},
   "last_run": {
-   "when": "2026-10-24 11:24",
+   "when": "2026-10-24 05:09",
    "ok": true,
    "how": "страницы сайта",
    "models": 3,
@@ -1091,12 +1091,12 @@
    "no_price": 0,
    "no_photo": 0,
    "changes": {
-    "new": 3,
+    "new": 0,
     "gone": 0,
     "price": 0,
     "stock": 0
    },
-   "seconds": 16,
+   "seconds": 32,
    "warnings": []
   },
   "id": "morelli-ru",

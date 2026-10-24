@@ -1,0 +1,62 @@
+# Сбор товаров на серверах GitHub. Запускается кнопками на сайте парсера (или вручную: Actions → Сбор товаров → Run workflow).
+name: Сбор товаров
+
+on:
+  workflow_dispatch:
+    inputs:
+      action:
+        description: 'run — собрать; add — добавить адрес и собрать; remove — убрать источник'
+        default: run
+      site_id:
+        description: 'ID источника (пусто = все)'
+        default: ''
+      url:
+        description: 'Адрес нового источника (для add)'
+        default: ''
+      name:
+        description: 'Название'
+        default: ''
+      brand:
+        description: 'Бренд для всех товаров'
+        default: ''
+      filter:
+        description: 'Отбор по слову'
+        default: ''
+      limit:
+        description: 'Сколько товаров (0 = все)'
+        default: '3'
+
+permissions:
+  contents: write
+
+concurrency:
+  group: collect
+  cancel-in-progress: false
+
+jobs:
+  collect:
+    runs-on: ubuntu-latest
+    timeout-minutes: 120
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with:
+          python-version: '3.12'
+          cache: pip
+      - name: Библиотеки
+        run: pip install -r requirements.txt
+      - name: Браузер для сайтов на скриптах
+        run: python -m playwright install --with-deps chromium
+      - name: Сбор
+        env:
+          ACTION: ${{ inputs.action }}
+          SITE_ID: ${{ inputs.site_id }}
+          URL: ${{ inputs.url }}
+          NAME: ${{ inputs.name }}
+          BRAND: ${{ inputs.brand }}
+          FILTER: ${{ inputs.filter }}
+          LIMIT: ${{ inputs.limit }}
+        run: |
+          git config user.name "parser-bot"
+          git config user.email "parser-bot@users.noreply.github.com"
+          python cli.py web-task

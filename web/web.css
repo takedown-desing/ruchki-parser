@@ -1,0 +1,22 @@
+/* Дополнения для сайта на GitHub Pages (основные стили — static/app.css, общие с локальной админкой). */
+.top nav { display: flex; align-items: center; }
+#auth { margin-left: 20px; font-size: 13px; color: #bbb; }
+#auth button { background: none; border: 1px solid #555; color: #eee; border-radius: 6px; padding: 4px 10px; cursor: pointer; font: inherit; }
+#auth button:hover { border-color: #aaa; }
+dialog { border: 0; border-radius: 12px; padding: 22px 24px; max-width: 520px; width: calc(100vw - 32px); box-shadow: 0 20px 50px rgba(0,0,0,.3); }
+dialog::backdrop { background: rgba(0,0,0,.45); }
+dialog ol { padding-left: 18px; }
+.err-text { color: var(--err); }
+.reason { color: var(--err); margin-top: 4px; max-width: 340px; }
+.warn-text { color: var(--warn); margin-top: 3px; }
+.card.stop { border-color: #f3c3bd; background: var(--err-bg); color: var(--err); }
+.card.warn { border-color: #f0d58c; background: var(--warn-bg); color: var(--warn); }
+.job-head a { color: #f3a96a; font-size: 13px; }
+.locked { opacity: .55; }
+.note { background: #fff; border: 1px dashed var(--line); border-radius: 8px; padding: 10px 14px; font-size: 13.5px; color: var(--muted); margin-bottom: 14px; }
+@media (max-width: 700px) {
+  .tbl thead { display: none; }
+  .tbl tr { display: block; border-bottom: 1px solid var(--line); padding: 8px 0; }
+  .tbl td { display: block; border: 0; padding: 4px 10px; }
+  .tbl .num { text-align: left; }
+}

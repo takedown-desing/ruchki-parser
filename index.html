@@ -1,0 +1,44 @@
+<!doctype html>
+<html lang="ru">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Парсер каталогов</title>
+<meta name="robots" content="noindex, nofollow">
+<link rel="icon" href="data:image/svg+xml,%3Csvg xmlns=%22http://www.w3.org/2000/svg%22 viewBox=%220 0 32 32%22%3E%3Crect width=%2232%22 height=%2232%22 rx=%227%22 fill=%22%23ee7a1f%22/%3E%3Cpath d=%22M8 13h11a5 5 0 0 1 0 10h-3%22 stroke=%22white%22 stroke-width=%223%22 fill=%22none%22 stroke-linecap=%22round%22/%3E%3C/svg%3E">
+<link rel="stylesheet" href="static/app.css">
+<link rel="stylesheet" href="web/web.css">
+</head>
+<body>
+<header class="top">
+  <a class="brand" href="#/"><b>ПАРСЕР КАТАЛОГОВ</b><small>для ручкидлядверей.рф</small></a>
+  <nav>
+    <a href="#/">Источники</a>
+    <a id="repo-link" href="#" target="_blank" rel="noopener">Репозиторий ↗</a>
+    <span id="auth"></span>
+  </nav>
+</header>
+<main class="wrap" id="app"><div class="empty">Загружаю…</div></main>
+<section class="job" id="job" hidden>
+  <div class="job-head"><b id="job-title">Сбор</b> <span id="job-progress"></span> <a id="job-link" href="#" target="_blank" rel="noopener">журнал ↗</a><button type="button" class="link" id="job-close">закрыть</button></div>
+  <pre id="job-log"></pre>
+</section>
+<dialog id="login">
+  <form method="dialog" id="login-form">
+    <h2>Вход для запуска сбора</h2>
+    <p class="small">Смотреть результаты и скачивать Excel можно без входа. Чтобы запускать сбор, нужен ключ GitHub с правом запускать задачи этого репозитория.</p>
+    <ol class="small">
+      <li>Откройте <a href="https://github.com/settings/personal-access-tokens/new" target="_blank" rel="noopener">создание ключа на GitHub ↗</a> под аккаунтом владельца репозитория.</li>
+      <li>Repository access: <b>Only select repositories</b> → <b>ruchki-parser</b>.</li>
+      <li>Permissions → Repository permissions → <b>Actions: Read and write</b>.</li>
+      <li>Нажмите Generate token, скопируйте ключ и вставьте сюда. Он хранится только в этом браузере.</li>
+    </ol>
+    <label class="fl" for="token">Ключ</label>
+    <input type="text" id="token" placeholder="github_pat_…" autocomplete="off">
+    <p class="small err-text" id="login-err"></p>
+    <div class="actions" style="margin-top:12px"><button class="btn btn-accent" value="ok">Войти</button><button class="btn" value="cancel" formnovalidate>Отмена</button></div>
+  </form>
+</dialog>
+<script src="web/web.js"></script>
+</body>
+</html>

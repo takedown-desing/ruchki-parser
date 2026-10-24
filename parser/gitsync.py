@@ -21,6 +21,7 @@ def save(message, log=print):
     if not _git('remote').stdout.strip():
         log('Удалённого репозитория нет, отправка в GitHub пропущена')
         return True
+    _git('pull', '--rebase', '--autostash', '-q')
     p = _git('push', '-q')
     log('Отправлено в GitHub' if p.returncode == 0 else 'Отправить в GitHub не удалось: ' + p.stderr.strip()[:300])
     return p.returncode == 0

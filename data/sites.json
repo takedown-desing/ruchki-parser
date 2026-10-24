@@ -1136,5 +1136,39 @@
   "id": "furnitura96-ru-search-search-aprile",
   "url": "https://furnitura96.ru/search/?search=Aprile",
   "added": "2026-10-24 05:10"
+ },
+ {
+  "name": "ЮНИОН",
+  "brand": "",
+  "filter": "",
+  "limit": 3,
+  "merge": true,
+  "use_description": false,
+  "method": "auto",
+  "render": "auto",
+  "feed_url": "",
+  "feed_kind": "",
+  "mapping": {},
+  "last_run": {
+   "when": "2026-10-24 05:52",
+   "ok": true,
+   "how": "страницы сайта",
+   "models": 1,
+   "variants": 1,
+   "images": 17,
+   "no_price": 0,
+   "no_photo": 0,
+   "changes": {
+    "new": 1,
+    "gone": 0,
+    "price": 0,
+    "stock": 0
+   },
+   "seconds": 31,
+   "warnings": []
+  },
+  "id": "union-ru-catalog-hardware-ruchki-dlya-mezhkomnatnykh-dverey",
+  "url": "https://union.ru/catalog-hardware/ruchki-dlya-mezhkomnatnykh-dverey/",
+  "added": "2026-10-24 05:51"
  }
 ]

@@ -1,42 +1,42 @@
 {
  "action": "add",
- "started": "2026-10-24 05:10",
+ "started": "2026-10-24 05:51",
  "status": "done",
  "log": [
-  "05:10:26 Добавлен источник: Aprile: furnitura96.ru (https://furnitura96.ru/search/?search=Aprile)",
-  "05:10:26 === Aprile: furnitura96.ru (https://furnitura96.ru/search/?search=Aprile)",
-  "05:10:44 Ищу фид: 40 возможных адресов",
-  "05:10:50 Фид не найден, собираю со страниц сайта",
-  "05:10:50 Ссылок на товары со страницы списка: 45",
-  "05:10:52   товар: Вставка в ручку APRILE GUAVA TH WC под окраску | 300.0 | фото 12 | page:jsonld",
-  "05:10:53   товар: Вставка в ручку APRILE GUAVA TH под окраску | 300.0 | фото 12 | page:jsonld",
-  "05:10:54   товар: Ручка APRILE ROSA R 7S BK Черный | 600.0 | фото 12 | page:jsonld",
-  "05:10:54 Собрано со страниц: 3 (проверено адресов: 3)",
-  "05:11:12 Фото сохранено: 6",
-  "05:11:12 Готово за 45 с: моделей 3, покрытий 3, источник: страницы сайта"
+  "05:51:58 Добавлен источник: ЮНИОН (https://union.ru/catalog-hardware/ruchki-dlya-mezhkomnatnykh-dverey/)",
+  "05:51:58 === ЮНИОН (https://union.ru/catalog-hardware/ruchki-dlya-mezhkomnatnykh-dverey/)",
+  "05:52:03 Ищу фид: 41 возможных адресов",
+  "05:52:09 Фид не найден, собираю со страниц сайта",
+  "05:52:09 Ссылок на товары со страницы списка: 51",
+  "05:52:10   товар: Дверная ручка ROBOT, произведено в Италии | 9100.0 | фото 12 | page:dom",
+  "05:52:11   товар: Дверная ручка ROBOT, произведено в Италии | 9400.0 | фото 12 | page:dom",
+  "05:52:12   товар: Дверная ручка ROBOT, произведено в Италии | 9400.0 | фото 8 | page:dom",
+  "05:52:12 Собрано со страниц: 3 (проверено адресов: 3)",
+  "05:52:30 Фото сохранено: 17",
+  "05:52:30 Готово за 31 с: моделей 1, покрытий 1, источник: страницы сайта"
  ],
- "run_id": "40065175532",
+ "run_id": "40067885983",
  "site_ids": [
-  "furnitura96-ru-search-search-aprile"
+  "union-ru-catalog-hardware-ruchki-dlya-mezhkomnatnykh-dverey"
  ],
- "finished": "2026-10-24 05:11",
+ "finished": "2026-10-24 05:52",
  "result": {
-  "furnitura96-ru-search-search-aprile": {
-   "when": "2026-10-24 05:11",
+  "union-ru-catalog-hardware-ruchki-dlya-mezhkomnatnykh-dverey": {
+   "when": "2026-10-24 05:52",
    "ok": true,
    "how": "страницы сайта",
-   "models": 3,
-   "variants": 3,
-   "images": 6,
+   "models": 1,
+   "variants": 1,
+   "images": 17,
    "no_price": 0,
    "no_photo": 0,
    "changes": {
-    "new": 3,
+    "new": 1,
     "gone": 0,
     "price": 0,
     "stock": 0
    },
-   "seconds": 45,
+   "seconds": 31,
    "warnings": []
   }
  }

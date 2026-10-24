@@ -1,0 +1,71 @@
+{% extends 'base.html' %}
+{% block body %}
+<div class="head">
+  <div>
+    <h1>Источники товаров</h1>
+    <div class="muted small">Добавьте адрес сайта, раздела или поиска. Парсер сначала ищет фид товаров, а если его нет, собирает товары со страниц.
+      {% if git.last_commit %}Последнее сохранение в репозиторий: {{ git.last_commit }}.{% endif %}</div>
+  </div>
+  <div class="actions">
+    {% if all_xlsx %}<a class="btn" href="{{ url_for('out_file', path='все-товары.xlsx') }}">Скачать все товары, Excel</a>{% endif %}
+    {% if sites %}<button class="btn btn-accent" type="button" data-run-all>Собрать все</button>{% endif %}
+  </div>
+</div>
+
+<section class="card">
+  <h2>Добавить источник</h2>
+  <form class="grid" method="post" action="{{ url_for('add_site') }}">
+    <div class="wide">
+      <label class="fl" for="url">Адрес *</label>
+      <input type="url" id="url" name="url" required placeholder="https://site.ru/  или страница бренда, раздела, поиска, или прямая ссылка на фид">
+      <div class="hint">Главная страница: парсер ищет фид, затем идёт по карте сайта. Страница раздела или поиска: берутся товары из этого списка. Ссылка на фид (yml, xml): читается сразу.</div>
+    </div>
+    <div><label class="fl" for="name">Название</label><input type="text" id="name" name="name" placeholder="например, TUPAI: свой магазин"></div>
+    <div><label class="fl" for="brand">Бренд для всех товаров</label><input type="text" id="brand" name="brand" placeholder="если не указан на сайте"></div>
+    <div><label class="fl" for="filter">Отбор по слову</label><input type="text" id="filter" name="filter" placeholder="например, FIMET"></div>
+    <div><label class="fl" for="limit">Сколько товаров</label><input type="number" id="limit" name="limit" value="3" min="0"><div class="hint">0 = все</div></div>
+    <div class="wide actions" style="align-items:center">
+      <label class="check"><input type="checkbox" name="merge" value="1" checked> Склеивать цвета одной модели в одну карточку</label>
+      <span style="flex:1"></span>
+      <button class="btn" name="add" value="1">Добавить</button>
+      <button class="btn btn-accent" name="run" value="1">Добавить и собрать</button>
+    </div>
+  </form>
+</section>
+
+<section class="card" style="padding:0">
+  {% if not sites %}
+    <div class="empty">Источников пока нет. Добавьте первый адрес выше.</div>
+  {% else %}
+  <table class="tbl">
+    <thead><tr><th>Источник</th><th>Как собирается</th><th>Последний сбор</th><th class="num">Моделей / покрытий</th><th>Изменения</th><th></th></tr></thead>
+    <tbody>
+    {% for s in sites %}{% set lr = s.last_run or {} %}
+      <tr>
+        <td><a href="{{ url_for('site_page', sid=s.id) }}"><b>{{ s.name }}</b></a><div class="url">{{ s.url }}</div>
+          {% if s.brand or s.filter %}<div class="small muted">{% if s.brand %}бренд: {{ s.brand }}{% endif %}{% if s.filter %} · отбор: «{{ s.filter }}»{% endif %}</div>{% endif %}</td>
+        <td>{% if lr.error %}<span class="tag err">ошибка</span>
+            {% elif lr.how and lr.how.startswith('фид') %}<span class="tag feed">{{ lr.how }}</span>
+            {% elif lr.how %}<span class="tag pages">{{ lr.how }}</span>
+            {% else %}<span class="tag">ещё не собирали</span>{% endif %}</td>
+        <td class="small">{% if lr.when %}{{ lr.when }}<div class="muted">{% if s.limit %}проба: до {{ s.limit }} тов.{% else %}все товары{% endif %}</div>{% else %}—{% endif %}</td>
+        <td class="num">{% if lr.models is defined %}{{ lr.models }} / {{ lr.variants }}<div class="small muted">фото {{ lr.images }}{% if lr.no_price %}, без цены {{ lr.no_price }}{% endif %}</div>{% else %}—{% endif %}</td>
+        <td class="chg small">{% if lr.changes %}
+            {% if lr.changes.new %}<span class="new">+{{ lr.changes.new }} новых</span>{% endif %}
+            {% if lr.changes.price %}<span class="price">цена: {{ lr.changes.price }}</span>{% endif %}
+            {% if lr.changes.stock %}<span class="stock">наличие: {{ lr.changes.stock }}</span>{% endif %}
+            {% if lr.changes.gone %}<span class="gone">−{{ lr.changes.gone }} пропало</span>{% endif %}
+            {% if not (lr.changes.new or lr.changes.price or lr.changes.stock or lr.changes.gone) %}<span class="muted">без изменений</span>{% endif %}
+          {% else %}—{% endif %}</td>
+        <td><div class="actions">
+          <button class="btn btn-sm btn-accent" type="button" data-run="{{ s.id }}">Собрать</button>
+          {% if lr.models is defined %}<a class="btn btn-sm" href="{{ url_for('out_file', path=s.id ~ '/products.xlsx') }}">Excel</a>{% endif %}
+        </div></td>
+      </tr>
+    {% endfor %}
+    </tbody>
+  </table>
+  {% endif %}
+</section>
+<p class="small muted">Excel готов к загрузке в админке сайта: «Excel / CSV: загрузка и выгрузка». Колонки «Источник: …» служебные, сайт их пропускает. Данные, Excel и фото после каждого сбора сохраняются в репозиторий.</p>
+{% endblock %}

@@ -1,0 +1,122 @@
+{% extends 'base.html' %}
+{% block title %}{{ site.name }} · Парсер каталогов{% endblock %}
+{% block body %}
+{% set lr = site.last_run or {} %}
+<div class="head">
+  <div>
+    <div class="small"><a href="{{ url_for('index') }}">← Источники</a></div>
+    <h1>{{ site.name }}</h1>
+    <div class="url"><a href="{{ site.url }}" target="_blank" rel="noopener">{{ site.url }}</a></div>
+  </div>
+  <div class="actions">
+    {% if has_xlsx %}<a class="btn" href="{{ url_for('out_file', path=site.id ~ '/products.xlsx') }}">Скачать Excel</a>{% endif %}
+    {% if has_changes %}<a class="btn" href="{{ url_for('out_file', path=site.id ~ '/changes.xlsx') }}">Изменения, Excel</a>{% endif %}
+    <button class="btn btn-accent" type="button" data-run="{{ site.id }}">Собрать сейчас</button>
+  </div>
+</div>
+
+{% if lr.when %}
+<div class="stats">
+  <div class="stat"><b>{{ lr.models }}</b><span>моделей</span></div>
+  <div class="stat"><b>{{ lr.variants }}</b><span>покрытий (строк Excel)</span></div>
+  <div class="stat"><b>{{ lr.images }}</b><span>фото сохранено</span></div>
+  <div class="stat"><b>{{ lr.no_price }}</b><span>без цены</span></div>
+  <div class="stat"><b>{{ lr.no_photo }}</b><span>без фото</span></div>
+  <div class="stat"><b style="font-size:15px">{{ lr.how }}</b><span>{{ lr.when }}, {{ lr.seconds }} с</span></div>
+</div>
+{% elif lr.error %}
+<div class="card" style="border-color:#f3c3bd;background:#fdecea">Последний сбор завершился ошибкой: {{ lr.error }}</div>
+{% endif %}
+
+<div class="grid2">
+<section class="card">
+  <h2>Настройки</h2>
+  <form method="post" action="{{ url_for('save_settings', sid=site.id) }}">
+    <label class="fl">Адрес</label><input type="url" name="url" value="{{ site.url }}" required>
+    <div class="grid2" style="gap:12px;margin-top:10px">
+      <div><label class="fl">Название</label><input type="text" name="name" value="{{ site.name }}"></div>
+      <div><label class="fl">Бренд для всех товаров</label><input type="text" name="brand" value="{{ site.brand }}"></div>
+      <div><label class="fl">Отбор по слову</label><input type="text" name="filter" value="{{ site.filter }}"><div class="hint">Берутся только товары, где слово есть в названии, бренде, разделе или адресе</div></div>
+      <div><label class="fl">Сколько товаров</label><input type="number" name="limit" value="{{ site.limit }}" min="0"><div class="hint">0 = все товары, 3 = проба</div></div>
+      <div><label class="fl">Способ сбора</label>
+        <select name="method">
+          <option value="auto" {{ 'selected' if site.method == 'auto' }}>Сначала фид, потом страницы</option>
+          <option value="feed" {{ 'selected' if site.method == 'feed' }}>Только фид</option>
+          <option value="pages" {{ 'selected' if site.method == 'pages' }}>Только страницы сайта</option>
+        </select></div>
+      <div><label class="fl">Адрес фида</label><input type="url" name="feed_url" value="{{ site.feed_url }}" placeholder="найдётся сам или впишите"><div class="hint">{% if site.feed_kind %}найден фид: {{ site.feed_kind }}{% else %}если владелец сайта дал ссылку на фид, вставьте её{% endif %}</div></div>
+    </div>
+    <div style="margin-top:12px">
+      <label class="check"><input type="checkbox" name="merge" value="1" {{ 'checked' if site.merge }}> Склеивать цвета одной модели в одну карточку</label>
+      <label class="check"><input type="checkbox" name="use_description" value="1" {{ 'checked' if site.use_description }}> Ставить описание источника в «Краткое описание»</label>
+      <div class="hint">Чужие тексты лучше переписывать: копия описания дилера даёт дубли в поиске. Без галочки описание попадает только в служебную колонку.</div>
+    </div>
+    <div class="actions" style="margin-top:14px">
+      <button class="btn btn-dark">Сохранить</button>
+      <span style="flex:1"></span>
+    </div>
+  </form>
+  <form method="post" action="{{ url_for('delete_site', sid=site.id) }}" onsubmit="return confirm('Убрать источник из списка? Собранные файлы останутся в папке output.')" style="margin-top:10px">
+    <button class="btn btn-sm btn-danger">Убрать источник</button>
+  </form>
+</section>
+
+<section class="card" id="mapping">
+  <h2>Разделы: источник → наш сайт</h2>
+  {% if not cats %}
+    <p class="muted small">Разделы появятся после первого сбора.</p>
+  {% else %}
+  <p class="small muted">Без соответствия колонка «Раздел» в Excel пустая, и импорт не создаст лишний раздел. Выберите раздел ручкидлядверей.рф из подсказок или впишите адрес.</p>
+  <form method="post" action="{{ url_for('save_mapping', sid=site.id) }}">
+    <datalist id="secs">{% for s in sections %}<option value="{{ s }}">{% endfor %}</datalist>
+    <table class="tbl">
+      <thead><tr><th>Раздел у источника</th><th>Раздел на нашем сайте</th></tr></thead>
+      <tbody>{% for c in cats %}
+        <tr><td class="small">{{ c }}</td><td><input type="text" list="secs" name="map::{{ c }}" value="{{ site.mapping.get(c, '') }}" placeholder="/catalog/…"></td></tr>
+      {% endfor %}</tbody>
+    </table>
+    <div class="actions" style="margin-top:10px"><button class="btn btn-dark">Сохранить и пересобрать Excel</button></div>
+  </form>
+  <form method="post" action="{{ url_for('refresh_sections') }}" style="margin-top:8px"><button class="link small">обновить список разделов сайта</button></form>
+  {% endif %}
+</section>
+</div>
+
+{% if history %}
+<section class="card">
+  <h2>История сборов</h2>
+  <table class="tbl"><thead><tr><th>Когда</th><th>Как</th><th class="num">Моделей</th><th class="num">Покрытий</th><th>Изменения</th></tr></thead><tbody>
+  {% for h in history[:10] %}<tr><td class="small">{{ h.when }}</td><td class="small">{{ h.how }}</td><td class="num">{{ h.models }}</td><td class="num">{{ h.variants }}</td>
+    <td class="chg small">{% set c = h.changes or {} %}{% if c.new %}<span class="new">+{{ c.new }}</span>{% endif %}{% if c.price %}<span class="price">цена {{ c.price }}</span>{% endif %}{% if c.stock %}<span class="stock">наличие {{ c.stock }}</span>{% endif %}{% if c.gone %}<span class="gone">−{{ c.gone }}</span>{% endif %}</td></tr>{% endfor %}
+  </tbody></table>
+</section>
+{% endif %}
+
+<section class="card">
+  <h2>Товары{% if data.models %} · {{ data.models | length }}{% endif %}</h2>
+  {% if not data.models %}<p class="muted">Ещё не собирали. Нажмите «Собрать сейчас».</p>{% endif %}
+  {% for m in data.models %}
+    {% set img = (m.variants[0].local_images or [None])[0] %}
+    <div class="prod">
+      {% if img %}<img src="{{ url_for('out_file', path=site.id ~ '/images/' ~ img) }}" alt="" loading="lazy">{% else %}<div class="noimg">нет фото</div>{% endif %}
+      <div>
+        <h3>{{ m.name }}</h3>
+        <div class="small muted">{% if m.brand %}{{ m.brand }} · {% endif %}{% if m.sku %}арт. {{ m.sku }} · {% endif %}{{ (m.category or []) | join(' › ') or 'раздел не определён' }}</div>
+        <table class="vars">{% for v in m.variants %}
+          <tr><td>{{ v.finish or '—' }}</td><td class="muted">{{ v.sku }}</td>
+            <td>{% if v.price %}{{ '{:,.0f}'.format(v.price).replace(',', ' ') }} {{ '₽' if (v.currency or 'RUB')|upper in ('RUB','RUR','') else v.currency }}{% else %}<span class="muted">цена не указана</span>{% endif %}</td>
+            <td class="small">{% if v.in_stock is none %}<span class="muted">наличие ?</span>{% elif v.in_stock %}в наличии{% else %}под заказ{% endif %}</td>
+            <td class="small"><a href="{{ v.url }}" target="_blank" rel="noopener">источник ↗</a></td></tr>
+        {% endfor %}</table>
+        {% set allimgs = [] %}{% for v in m.variants %}{% for i in v.local_images %}{% set _ = allimgs.append(i) %}{% endfor %}{% endfor %}
+        {% if allimgs | length > 1 %}<div class="thumbs">{% for i in allimgs[:12] %}<a href="{{ url_for('out_file', path=site.id ~ '/images/' ~ i) }}" target="_blank"><img src="{{ url_for('out_file', path=site.id ~ '/images/' ~ i) }}" alt="" loading="lazy"></a>{% endfor %}</div>{% endif %}
+        {% if m.specs or m.description %}
+        <details><summary>характеристики и описание</summary>
+          {% if m.specs %}<div class="specs">{% for k, v in m.specs.items() %}<div><b>{{ k }}:</b> {{ v }}</div>{% endfor %}</div>{% endif %}
+          {% if m.description %}<p class="small">{{ m.description[:1200] }}</p>{% endif %}
+        </details>{% endif %}
+      </div>
+    </div>
+  {% endfor %}
+</section>
+{% endblock %}

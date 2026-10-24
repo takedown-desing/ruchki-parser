@@ -1,0 +1,28 @@
+<!doctype html>
+<html lang="ru">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>{% block title %}Парсер каталогов{% endblock %}</title>
+<link rel="icon" href="data:image/svg+xml,%3Csvg xmlns=%22http://www.w3.org/2000/svg%22 viewBox=%220 0 32 32%22%3E%3Crect width=%2232%22 height=%2232%22 rx=%227%22 fill=%22%23ee7a1f%22/%3E%3Cpath d=%22M8 13h11a5 5 0 0 1 0 10h-3%22 stroke=%22white%22 stroke-width=%223%22 fill=%22none%22 stroke-linecap=%22round%22/%3E%3C/svg%3E">
+<link rel="stylesheet" href="{{ url_for('static', filename='app.css') }}">
+</head>
+<body>
+<header class="top">
+  <a class="brand" href="{{ url_for('index') }}"><b>ПАРСЕР КАТАЛОГОВ</b><small>для ручкидлядверей.рф</small></a>
+  <nav>
+    <a href="{{ url_for('index') }}">Источники</a>
+    {% if git and git.remote %}<a href="{{ git.remote | replace('.git', '') }}" target="_blank" rel="noopener">Репозиторий ↗</a>{% endif %}
+  </nav>
+</header>
+<main class="wrap">
+{% block body %}{% endblock %}
+</main>
+<section class="job" id="job" hidden>
+  <div class="job-head"><b id="job-title">Сбор</b> <span id="job-progress"></span> <button type="button" class="link" id="job-toggle">свернуть</button></div>
+  <pre id="job-log"></pre>
+</section>
+<script>window.JOB = {{ (job or {}) | tojson }};</script>
+<script src="{{ url_for('static', filename='app.js') }}"></script>
+</body>
+</html>

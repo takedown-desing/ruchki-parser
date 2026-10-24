@@ -1102,5 +1102,39 @@
   "id": "morelli-ru",
   "url": "https://morelli.ru/",
   "added": "2026-10-24 09:39"
+ },
+ {
+  "name": "Aprile: furnitura96.ru",
+  "brand": "Aprile",
+  "filter": "",
+  "limit": 3,
+  "merge": true,
+  "use_description": false,
+  "method": "auto",
+  "render": "auto",
+  "feed_url": "",
+  "feed_kind": "",
+  "mapping": {},
+  "last_run": {
+   "when": "2026-10-24 05:11",
+   "ok": true,
+   "how": "страницы сайта",
+   "models": 3,
+   "variants": 3,
+   "images": 6,
+   "no_price": 0,
+   "no_photo": 0,
+   "changes": {
+    "new": 3,
+    "gone": 0,
+    "price": 0,
+    "stock": 0
+   },
+   "seconds": 45,
+   "warnings": []
+  },
+  "id": "furnitura96-ru-search-search-aprile",
+  "url": "https://furnitura96.ru/search/?search=Aprile",
+  "added": "2026-10-24 05:10"
  }
 ]

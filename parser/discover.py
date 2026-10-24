@@ -37,8 +37,9 @@ def keyword_of(url):
 
 
 def is_root(url):
+    """Главная сайта, в том числе языковая: /, /en/, /ru/, /it/."""
     p = urlsplit(url)
-    return p.path in ('', '/') and not p.query
+    return (p.path in ('', '/') or bool(re.fullmatch(r'/[a-z]{2}(-[a-z]{2})?/?', p.path))) and not p.query
 
 
 def find_feed(fx, url, log):
@@ -70,10 +71,10 @@ def find_feed(fx, url, log):
     log(f'Ищу фид: {len(uniq)} возможных адресов')
 
     def probe(c):
-        head = fx.get(c, max_bytes=65536, quiet=True, retries=0, delay=0, timeout=8)
+        head = fx.get(c, max_bytes=65536, quiet=True, retries=0, delay=0, timeout=20)
         return feeds.detect(head)
     found = {}
-    with ThreadPoolExecutor(12) as ex:
+    with ThreadPoolExecutor(6) as ex:
         futs = {ex.submit(probe, c): i for i, c in enumerate(uniq)}
         for f in as_completed(futs):
             try:
@@ -119,16 +120,29 @@ def sitemap_urls(fx, root, log, cap=60000):
     return urls
 
 
+def _template(u):
+    """Группа адреса: путь без последнего сегмента (/en/catalogo/ref-1784/ → /en/catalogo/*)."""
+    segs = [x for x in urlsplit(u).path.split('/') if x]
+    return '/'.join(segs[:-1]) + '/*' if segs else '/'
+
+
 def rank_candidates(urls, keyword=''):
-    """Адреса, похожие на карточки товаров, от самых похожих."""
+    """Адреса, похожие на карточки товаров, от самых похожих. Самая многочисленная группа адресов карты сайта
+    обычно и есть товары, поэтому её адреса идут выше."""
+    import math
     kw = keyword.lower()
+    groups = {}
+    for u in urls:
+        groups[_template(u)] = groups.get(_template(u), 0) + 1
     out = []
     for u in urls:
         if NOT_PRODUCT.search(u):
             continue
         path = urlsplit(u).path
         depth = len([x for x in path.split('/') if x])
-        s = (3 if PRODUCT_HINT.search(u) else 0) + min(depth, 4) * 0.5 + (5 if kw and kw in u.lower() else 0)
+        size = groups.get(_template(u), 1)
+        s = (3 if PRODUCT_HINT.search(u) else 0) + min(depth, 4) * 0.3 + (5 if kw and kw in u.lower() else 0) \
+            + (min(4, math.log10(size) * 1.6) if size >= 5 else 0)
         out.append((s, u))
     out.sort(key=lambda x: -x[0])
     return [u for _, u in out]

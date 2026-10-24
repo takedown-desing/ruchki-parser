@@ -1,0 +1,41 @@
+{
+ "site": "https://rir.ru/search/index.php?q=AGB&s=",
+ "when": "2026-10-24 11:08",
+ "how": "страницы сайта",
+ "models": [
+  {
+   "name": "Ответная часть NO в комплекте с электромагнитной защелкой AGB",
+   "brand": "AGB",
+   "sku": "B997055034",
+   "category": [
+    "Замки и фурнитура для межкомнатных дверей",
+    "Замки AGB и ответные части для межкомнатных дверей",
+    "Магнитные замки AGB Mediana Polaris"
+   ],
+   "description": "Ответная часть NO в комплекте с электромагнитной защелкой AGB оптом, AGB (Италия) в цвете Матовый хром. Пишите на rir@rir.ru, чтобы узнать о наличий на складе или сделать заказ. Самовывоз, доставка по Москве, Подмосковью, в регионы России.",
+   "specs": {},
+   "url": "https://rir.ru/catalog/otvetnaya-chast-v-komplekte-s-elektromagnitnoy-zashchelkoy.php",
+   "variants": [
+    {
+     "finish": "Матовый хром",
+     "sku": "B997055034",
+     "price": 217.58,
+     "currency": "RUB",
+     "in_stock": null,
+     "images": [
+      "https://rir.ru/upload/iblock/24f/24f77c127ed729830e11e84af8ef9c89.jpg",
+      "https://rir.ru/upload/iblock/0cf/0cfedc20320fe0e99e80791580ec16c4.jpg",
+      "https://rir.ru/upload/iblock/17b/17be56938de36ce1f5979b6f84825775.jpg"
+     ],
+     "local_images": [
+      "otvetnaya-chast-no-v-komplekte-s-elektromagnitnoy-zashchelko-5d37d4.jpg",
+      "otvetnaya-chast-no-v-komplekte-s-elektromagnitnoy-zashchelko-74e644.jpg",
+      "otvetnaya-chast-no-v-komplekte-s-elektromagnitnoy-zashchelko-36fc94.jpg"
+     ],
+     "url": "https://rir.ru/catalog/otvetnaya-chast-v-komplekte-s-elektromagnitnoy-zashchelkoy.php",
+     "source": "page:dom"
+    }
+   ]
+  }
+ ]
+}

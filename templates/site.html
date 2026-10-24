@@ -15,7 +15,10 @@
   </div>
 </div>
 
-{% if lr.when %}
+{% if lr.stopped %}
+<div class="card stop"><b>Сбор остановлен.</b> {{ lr.problem }}<div class="small muted" style="margin-top:6px">Проверено {{ lr.when }}. Можно изменить адрес (например, дать страницу раздела или фид) и собрать снова.</div></div>
+{% elif lr.when %}
+{% if lr.warnings %}<div class="card warn"><b>Замечания:</b> {{ lr.warnings | join('; ') }}.</div>{% endif %}
 <div class="stats">
   <div class="stat"><b>{{ lr.models }}</b><span>моделей</span></div>
   <div class="stat"><b>{{ lr.variants }}</b><span>покрытий (строк Excel)</span></div>
@@ -44,6 +47,12 @@
           <option value="feed" {{ 'selected' if site.method == 'feed' }}>Только фид</option>
           <option value="pages" {{ 'selected' if site.method == 'pages' }}>Только страницы сайта</option>
         </select></div>
+      <div><label class="fl">Браузер для сайтов на скриптах</label>
+        <select name="render">
+          <option value="auto" {{ 'selected' if site.render == 'auto' }}>Сам решает: включается, если фото не нашлись</option>
+          <option value="always" {{ 'selected' if site.render == 'always' }}>Всегда открывать в браузере</option>
+          <option value="never" {{ 'selected' if site.render == 'never' }}>Не использовать</option>
+        </select><div class="hint">В браузере страница открывается как у посетителя. Медленнее, но видно то, что сайт достраивает скриптом</div></div>
       <div><label class="fl">Адрес фида</label><input type="url" name="feed_url" value="{{ site.feed_url }}" placeholder="найдётся сам или впишите"><div class="hint">{% if site.feed_kind %}найден фид: {{ site.feed_kind }}{% else %}если владелец сайта дал ссылку на фид, вставьте её{% endif %}</div></div>
     </div>
     <div style="margin-top:12px">
@@ -86,7 +95,7 @@
 <section class="card">
   <h2>История сборов</h2>
   <table class="tbl"><thead><tr><th>Когда</th><th>Как</th><th class="num">Моделей</th><th class="num">Покрытий</th><th>Изменения</th></tr></thead><tbody>
-  {% for h in history[:10] %}<tr><td class="small">{{ h.when }}</td><td class="small">{{ h.how }}</td><td class="num">{{ h.models }}</td><td class="num">{{ h.variants }}</td>
+  {% for h in history[:10] %}<tr><td class="small">{{ h.when }}</td><td class="small">{% if h.stopped %}<span class="tag err">остановлен</span> {{ h.problem }}{% else %}{{ h.how }}{% endif %}</td><td class="num">{{ h.models }}</td><td class="num">{{ h.variants }}</td>
     <td class="chg small">{% set c = h.changes or {} %}{% if c.new %}<span class="new">+{{ c.new }}</span>{% endif %}{% if c.price %}<span class="price">цена {{ c.price }}</span>{% endif %}{% if c.stock %}<span class="stock">наличие {{ c.stock }}</span>{% endif %}{% if c.gone %}<span class="gone">−{{ c.gone }}</span>{% endif %}</td></tr>{% endfor %}
   </tbody></table>
 </section>

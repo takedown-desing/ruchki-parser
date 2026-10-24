@@ -177,28 +177,44 @@ def _sku_from_dom(soup):
     return m.group(1).strip() if m else ''
 
 
+TEMPLATE_IMG = re.compile(r'(?i)/(templates?|themes?|assets/(img|images|icons)|static/(img|images|icons)|local/templates|bitrix/templates|img/(icons?|ui))/')
+
+
 def _images_from_dom(soup, base):
-    """Фото товара: ссылки на увеличенные фото в галерее, затем картинки в блоке товара."""
-    found = []
-    area = soup.select_one('[class*="gallery"], [class*="product-image"], [class*="product__image"], [class*="photos"], '
-                           '[class*="slider"], [class*="carousel"], [class*="card-sect"], [class*="product-gallery"], '
-                           '[class*="detail"], [class*="product"]') or soup
-    for a in area.find_all('a', href=True):
-        if IMG_EXT.search(a['href']):
-            found.append(a['href'])
-    for img in area.find_all('img'):
-        for attr in ('data-zoom-image', 'data-large', 'data-full', 'data-original', 'data-src', 'data-lazy', 'src'):
-            v = img.get(attr)
-            if v and IMG_EXT.search(v):
-                found.append(v); break
-        if img.get('srcset'):
-            last = img['srcset'].split(',')[-1].strip().split(' ')[0]
-            if IMG_EXT.search(last):
-                found.append(last)
+    """Фото товара: ссылки на увеличенные фото и картинки во всех блоках галереи; если галереи не нашлось, по всей странице
+    без картинок оформления (логотипы, иконки, файлы шаблона)."""
+    areas = soup.select('[class*="gallery"], [class*="product-image"], [class*="product__image"], [class*="photos"], [class*="photo"], '
+                        '[class*="slider"], [class*="carousel"], [class*="card-sect"], [class*="product-gallery"], [class*="detail"], '
+                        '[class*="images"], [class*="picture"], [itemprop="image"]')
+
+    def collect(roots):
+        found = []
+        for area in roots:
+            for a in area.find_all('a', href=True):
+                if IMG_EXT.search(a['href']):
+                    found.append(a['href'])
+            for img in ([area] if area.name == 'img' else []) + area.find_all('img'):
+                for attr in ('data-zoom-image', 'data-large', 'data-full', 'data-original', 'data-src', 'data-lazy', 'src'):
+                    v = img.get(attr)
+                    if v and IMG_EXT.search(v):
+                        found.append(v); break
+                if img.get('srcset'):
+                    last = img['srcset'].split(',')[-1].strip().split(' ')[0]
+                    if IMG_EXT.search(last):
+                        found.append(last)
+        return found
+    found = collect(areas)
+    # фото из основного содержимого: у части сайтов галерея не размечена отдельным блоком
+    main = soup.find('main') or soup.find(attrs={'role': 'main'}) or soup.find(id=re.compile('content|main', re.I)) or soup.body or soup
+    found += collect([main])
     out = []
     for u in found:
         u = urljoin(base, u.strip())
-        if SKIP_IMG.search(u) or re.search(r'(?i)(\d{2,3})x(\d{2,3})\.', u) and int(re.search(r'(\d{2,3})x', u).group(1)) < 200:
+        if SKIP_IMG.search(u) or TEMPLATE_IMG.search(u):
+            continue
+        m = re.search(r'(?i)[-_.](\d{2,4})x(\d{2,4})\.', u) or re.search(r'/resize_cache/.*?/(\d{2,4})_(\d{2,4})_\d/', u) \
+            or re.search(r'(?i)[/_-](?:w|width)?(\d{2,3})[x_](\d{2,3})/', u)
+        if m and int(m.group(1)) < 200:
             continue
         if u not in out:
             out.append(u)
@@ -262,6 +278,12 @@ def _description_from_dom(soup):
     return ''
 
 
+def is_article(html):
+    """Статья или новость: в разметке Article/BlogPosting/NewsArticle и нет Product."""
+    low = (html or '').lower()
+    return bool(re.search(r'"@type"\s*:\s*\[?\s*"(article|blogposting|newsarticle)"', low)) and '"product"' not in low
+
+
 def is_product_page(html):
     """Похожа ли страница на карточку товара: разметка Product, og:type=product или цена + кнопка покупки."""
     if not html:
@@ -284,12 +306,22 @@ def extract(html, url):
     via = 'jsonld' if _from_ld(soup, it) else ''
     if _from_microdata(soup, it) and not via:
         via = 'microdata'
+    h1el = soup.find('h1')
+    h1 = clean_text(h1el.get_text(' ')) if h1el else ''
+    if h1 and it['name'] and it['name'].startswith(h1) and re.search(r'(?i)фото|изображени|ракурс|photo|image', it['name'][len(h1):]):
+        it['name'] = h1
     if not it['name']:
         h1 = soup.find('h1')
         it['name'] = clean_text(h1.get_text(' ')) if h1 else clean_text(_meta(soup, 'og:title'))
         via = via or 'dom'
     if not it['name']:
         return None
+    it['name'] = re.sub(r'(?i)\s*[-–—]\s*(фото|изображение)\s+товара.*$', '', it['name'])
+    # «Ref. 1781 - Tupai»: хвост с названием сайта из заголовка вкладки
+    host = urlsplit(url).netloc.replace('www.', '').split('.')[0].lower()
+    m = re.match(r'^(.*\S)\s+[-–—|]\s+([^-–—|]{2,30})$', it['name'])
+    if m and (m.group(2).strip().lower().replace(' ', '') in host or host in m.group(2).strip().lower().replace(' ', '')):
+        it['name'] = m.group(1)
     if it['price'] is None:
         it['price'] = to_price(_meta(soup, 'product:price:amount')) or _price_from_dom(soup)
         cur = _meta(soup, 'product:price:currency')
@@ -313,7 +345,8 @@ def extract(html, url):
     if not it['category']:
         it['category'] = _crumbs_from_dom(soup)
     # хлебные крошки без «Главной» и без самого товара
-    it['category'] = [c for c in it['category'] if not re.match(r'(?i)^(главная|home|каталог|catalog|магазин|shop)$', c) and c != it['name']]
+    it['category'] = [c for c in it['category'] if not re.match(r'(?i)^(главная|home|homepage|início|inicio|start|startseite|accueil|каталог|catalog|catalogo|магазин|shop|portfolios?)$', c)
+                      and c != it['name'] and c not in it['name']]
     dom_specs = _specs_from_dom(soup)
     for k, v in dom_specs.items():
         it['specs'].setdefault(k, v)
@@ -340,8 +373,9 @@ def extract(html, url):
 
 # ---------- ссылки на товары ----------
 
-PRODUCT_HINT = re.compile(r'(?i)/(product|products|tovar|tovary|goods|item|items|p|shop/[^/]+)/|/(catalog|katalog)/[^/]+/[^/]+|\.html?$|[?&](product_id|id)=\d')
-NOT_PRODUCT = re.compile(r'(?i)/(cart|basket|korzina|login|register|account|personal|compare|wishlist|search|news|blog|stati|articles|about|o-nas|contacts?|kontakty|dostavka|oplata|delivery|payment|privacy|policy|brands?|tag|filter|sort)(/|$|\?)|\.(pdf|jpg|png|zip|doc)$|#|mailto:|tel:')
+PRODUCT_HINT = re.compile(r'(?i)/(product|products|produkt|produkty|prodotto|prodotti|produit|produits|produto|catalogo/[^/]+|catalogue/[^/]+|tovar|tovary|goods|item|items|p|shop/[^/]+)/|/(catalog|katalog)/[^/]+/[^/]+|\.html?$|[?&](product_id|id)=\d')
+STRONG_HINT = re.compile(r'(?i)/(product|products|produkt|produkty|prodotto|prodotti|produit|produits|produto|catalogo/[^/]+|catalogue/[^/]+|tovar|tovary|goods|item|items|p)/|/(catalog|katalog)/[^/]+/[^/]+|[?&](product_id)=\d')
+NOT_PRODUCT = re.compile(r'(?i)/(cart|basket|korzina|login|register|account|personal|compare|wishlist|search|news|novosti|blog|stati|statya|articles?|journal|press|shkola[\w-]*|about|o-nas|o-kompanii|contacts?|kontakty|dostavka|oplata|delivery|payment|privacy|policy|brands?|tag|filter|sort|sertifikat\w*|certificat\w*|docs?|faq|vacanc\w*|vakansii)(/|$|\?|\.)|\.(pdf|jpg|png|zip|doc)$|#|mailto:|tel:')
 
 
 def product_links(html, base, limit=200):
@@ -366,6 +400,54 @@ def product_links(html, base, limit=200):
         if s >= 2:
             scored[u] = max(scored.get(u, 0), s)
     return [u for u, _ in sorted(scored.items(), key=lambda x: -x[1])][:limit]
+
+
+def catalog_links(html, base, limit=40):
+    """Ссылки на разделы каталога из меню главной: /catalog/…, /katalog/…, /shop/…, /collection/…"""
+    soup = soup_of(html)
+    host = urlsplit(base).netloc
+    out = []
+    for a in soup.find_all('a', href=True):
+        u = urljoin(base, a['href']).split('#')[0]
+        if urlsplit(u).netloc != host or NOT_PRODUCT.search(u):
+            continue
+        if re.search(r'(?i)/(catalog|katalog|shop|products?|produkty|tovary|collections?|category|categories|kategorii)/[^/?]+', u) and u not in out:
+            out.append(u)
+    return out[:limit]
+
+
+SECTION_WORDS = re.compile(r'(?i)(ручки|петли|замки|накладки|завертки|упоры|ограничители|доводчики|механизмы|системы|комплекты|аксессуары|'
+                           r'фурнитура|цилиндры|задвижки|шпингалеты|ригели|каталог|коллекции|серии|'
+                           r'handles|hinges|locks|knobs|pulls|stops|systems|frames|accessories|collections|series|doors|windows|'
+                           r'maniglie|cerniere|serrature|griffe|poign[ée]es)\b')
+
+
+def looks_like_section_name(name):
+    """«Дверные ручки», «Concealed hinges»: общее название без модели и цифр, во множественном числе."""
+    n = (name or '').strip()
+    return bool(n) and not re.search(r'\d', n) and len(n.split()) <= 7 and bool(SECTION_WORDS.search(n))
+
+
+def card_grid(html, url):
+    """Сколько разных ссылок с картинками в основной части страницы (без шапки, подвала, меню и блоков «похожие»)."""
+    soup = soup_of(html)
+    for x in soup.select('header, footer, nav, [class*="header"], [class*="footer"], [class*="menu"], [class*="related"], '
+                         '[class*="similar"], [class*="recommend"], [class*="viewed"], [class*="upsell"], [class*="cross"]'):
+        x.decompose()
+    host = urlsplit(url).netloc
+    hrefs = set()
+    for a in soup.find_all('a', href=True):
+        u = urljoin(url, a['href']).split('#')[0]
+        if urlsplit(u).netloc == host and a.find('img') and not NOT_PRODUCT.search(u) and u.rstrip('/') != url.rstrip('/'):
+            hrefs.add(u)
+    return len(hrefs)
+
+
+def is_listing(html, url):
+    """Страница раздела: много ссылок на товары внутри её же адреса (/catalog/ruchki/ → /catalog/ruchki/модель/)."""
+    own = re.sub(r'\.(html?|php)$', '', url.split('?')[0].split('#')[0]).rstrip('/') + '/'
+    kids = [l for l in product_links(html, url, limit=80) if l.startswith(own) and l.rstrip('/') + '/' != own]
+    return len(kids) >= 4
 
 
 def next_page(html, base):

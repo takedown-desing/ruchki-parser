@@ -1,0 +1,125 @@
+{
+ "site": "https://www.otlav.it/",
+ "when": "2026-10-24 11:25",
+ "how": "страницы сайта",
+ "models": [
+  {
+   "name": "TRIXACTA 473 Ø18",
+   "brand": "Otlav",
+   "sku": "",
+   "category": [],
+   "description": "",
+   "specs": {},
+   "url": "https://www.otlav.it/it/prodotti/CERNIERE/PER-CAVA-EUROPEA/473180A?MICROFAMIGLIA=473180A9F",
+   "variants": [
+    {
+     "finish": "",
+     "sku": "",
+     "price": null,
+     "currency": "RUB",
+     "in_stock": null,
+     "images": [
+      "https://www.otlav.it/assets/products/473180A9F_1.jpg",
+      "https://www.otlav.it/assets/disegni/473180A.jpg",
+      "https://www.otlav.it/assets/products/473180A9F_2.jpg",
+      "https://www.otlav.it/assets/products/473180A9F_3.jpg",
+      "https://www.otlav.it/assets/lang/IT.png",
+      "https://www.otlav.it/assets/lang/EN.png",
+      "https://www.otlav.it/assets/lang/FR.png",
+      "https://www.otlav.it/assets/lang/DE.png",
+      "https://www.otlav.it/assets/lang/ES.png",
+      "https://www.otlav.it/assets/lang/PL.png",
+      "https://www.otlav.it/assets/lang/RU.png",
+      "https://www.otlav.it/images/zoom.png"
+     ],
+     "local_images": [
+      "trixacta-473-18-d3de3d.jpg",
+      "trixacta-473-18-b5c6d1.jpg",
+      "trixacta-473-18-7c147d.jpg",
+      "trixacta-473-18-e6f757.jpg"
+     ],
+     "url": "https://www.otlav.it/it/prodotti/CERNIERE/PER-CAVA-EUROPEA/473180A?MICROFAMIGLIA=473180A9F",
+     "source": "page:dom"
+    }
+   ]
+  },
+  {
+   "name": "475 Ø18",
+   "brand": "Otlav",
+   "sku": "",
+   "category": [],
+   "description": "",
+   "specs": {},
+   "url": "https://www.otlav.it/it/prodotti/CERNIERE/REGOLABILI/475180A?MICROFAMIGLIA=475180A9F",
+   "variants": [
+    {
+     "finish": "",
+     "sku": "",
+     "price": null,
+     "currency": "RUB",
+     "in_stock": null,
+     "images": [
+      "https://www.otlav.it/assets/products/475180A9F_1.jpg",
+      "https://www.otlav.it/assets/disegni/475180A.jpg",
+      "https://www.otlav.it/assets/products/475180A9F_2.jpg",
+      "https://www.otlav.it/assets/products/475180A9F_3.jpg",
+      "https://www.otlav.it/assets/lang/IT.png",
+      "https://www.otlav.it/assets/lang/EN.png",
+      "https://www.otlav.it/assets/lang/FR.png",
+      "https://www.otlav.it/assets/lang/DE.png",
+      "https://www.otlav.it/assets/lang/ES.png",
+      "https://www.otlav.it/assets/lang/PL.png",
+      "https://www.otlav.it/assets/lang/RU.png",
+      "https://www.otlav.it/images/zoom.png"
+     ],
+     "local_images": [
+      "475-18-3c7d85.jpg",
+      "475-18-8dacbb.jpg",
+      "475-18-0fe3e0.jpg",
+      "475-18-06e13f.jpg"
+     ],
+     "url": "https://www.otlav.it/it/prodotti/CERNIERE/REGOLABILI/475180A?MICROFAMIGLIA=475180A9F",
+     "source": "page:dom"
+    }
+   ]
+  },
+  {
+   "name": "URSUS Ø14",
+   "brand": "Otlav",
+   "sku": "",
+   "category": [],
+   "description": "",
+   "specs": {},
+   "url": "https://www.otlav.it/it/prodotti/CERNIERE/REGOLABILI/495140G?MICROFAMIGLIA=495140G8H",
+   "variants": [
+    {
+     "finish": "",
+     "sku": "",
+     "price": null,
+     "currency": "RUB",
+     "in_stock": null,
+     "images": [
+      "https://www.otlav.it/assets/products/495140G8H_1.jpg",
+      "https://www.otlav.it/assets/disegni/495140G.jpg",
+      "https://www.otlav.it/assets/lang/IT.png",
+      "https://www.otlav.it/assets/lang/EN.png",
+      "https://www.otlav.it/assets/lang/FR.png",
+      "https://www.otlav.it/assets/lang/DE.png",
+      "https://www.otlav.it/assets/lang/ES.png",
+      "https://www.otlav.it/assets/lang/PL.png",
+      "https://www.otlav.it/assets/lang/RU.png",
+      "https://www.otlav.it/images/zoom.png",
+      "https://www.otlav.it/assets/news/a6/6d/fe31/e953f3b3/a66dfe31e953f3b3f32d7f8d5ab72514.jpg",
+      "https://www.otlav.it/assets/news/58/c3/a251/5ff9d139/58c3a2515ff9d139c21e396ad79276c9.jpg"
+     ],
+     "local_images": [
+      "ursus-14-d0b1fc.jpg",
+      "ursus-14-89c7ba.jpg"
+     ],
+     "url": "https://www.otlav.it/it/prodotti/CERNIERE/REGOLABILI/495140G?MICROFAMIGLIA=495140G8H",
+     "source": "page:dom"
+    }
+   ]
+  }
+ ]
+}

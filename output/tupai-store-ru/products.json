@@ -1,0 +1,61 @@
+{
+ "site": "https://tupai-store.ru/",
+ "when": "2026-10-24 11:00",
+ "how": "фид yml",
+ "models": [
+  {
+   "name": "Ручка Tupai 4213 5S",
+   "brand": "Tupai",
+   "sku": "4213 5S",
+   "category": [
+    "4213 5S"
+   ],
+   "description": "Дизайн дверной ручки Tupai 4213 5S 158 продуман до деталей. Модель выполнена из латуни на современном производстве, устойчива к истиранию и имеет крепкую конструкцию. Длительная гарантия",
+   "specs": {},
+   "url": "https://tupai-store.ru/katalog/4213-5s/ruchka-tupai-4213-5s-158/",
+   "variants": [
+    {
+     "finish": "158",
+     "sku": "4213 5S 158",
+     "price": 29131.0,
+     "currency": "RUR",
+     "in_stock": true,
+     "images": [],
+     "local_images": [],
+     "url": "https://tupai-store.ru/katalog/4213-5s/ruchka-tupai-4213-5s-158/",
+     "source": "feed:yml"
+    },
+    {
+     "finish": "153",
+     "sku": "4213 5S 153",
+     "price": 29131.0,
+     "currency": "RUR",
+     "in_stock": true,
+     "images": [
+      "https://tupai-store.ru/assets/images/products/2293/4153-5s-153.png"
+     ],
+     "local_images": [
+      "ruchka-tupai-4213-5s-153-d933ae.jpg"
+     ],
+     "url": "https://tupai-store.ru/katalog/4213-5s/ruchka-tupai-4213-5s-153/",
+     "source": "feed:yml"
+    },
+    {
+     "finish": "03",
+     "sku": "4213 5S 03",
+     "price": 29131.0,
+     "currency": "RUR",
+     "in_stock": true,
+     "images": [
+      "https://tupai-store.ru/assets/images/products/2292/tupai-4213-5s-03.png"
+     ],
+     "local_images": [
+      "ruchka-tupai-4213-5s-03-08e2aa.jpg"
+     ],
+     "url": "https://tupai-store.ru/katalog/4213-5s/ruchka-tupai-4213-5s-03/",
+     "source": "feed:yml"
+    }
+   ]
+  }
+ ]
+}

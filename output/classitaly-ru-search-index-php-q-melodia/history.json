@@ -1,0 +1,56 @@
+[
+ {
+  "when": "2026-10-24 11:53",
+  "ok": true,
+  "how": "страницы сайта",
+  "models": 3,
+  "variants": 3,
+  "images": 12,
+  "no_price": 0,
+  "no_photo": 0,
+  "changes": {
+   "new": 3,
+   "gone": 3,
+   "price": 0,
+   "stock": 0
+  },
+  "seconds": 39,
+  "warnings": []
+ },
+ {
+  "when": "2026-10-24 11:51",
+  "ok": true,
+  "how": "страницы сайта",
+  "models": 3,
+  "variants": 3,
+  "images": 12,
+  "no_price": 0,
+  "no_photo": 0,
+  "changes": {
+   "new": 3,
+   "gone": 3,
+   "price": 0,
+   "stock": 0
+  },
+  "seconds": 13,
+  "warnings": []
+ },
+ {
+  "when": "2026-10-24 11:19",
+  "ok": true,
+  "how": "страницы сайта",
+  "models": 3,
+  "variants": 3,
+  "images": 14,
+  "no_price": 0,
+  "no_photo": 0,
+  "changes": {
+   "new": 3,
+   "gone": 0,
+   "price": 0,
+   "stock": 0
+  },
+  "seconds": 31,
+  "warnings": []
+ }
+]

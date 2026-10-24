@@ -14,7 +14,7 @@ OUTPUT = os.path.join(ROOT, 'output')
 SITES = os.path.join(DATA, 'sites.json')
 _lock = threading.Lock()
 
-DEFAULTS = {'name': '', 'brand': '', 'filter': '', 'limit': 3, 'merge': True, 'use_description': False, 'method': 'auto',
+DEFAULTS = {'name': '', 'brand': '', 'filter': '', 'limit': 3, 'merge': True, 'use_description': False, 'method': 'auto', 'render': 'auto',
             'feed_url': '', 'feed_kind': '', 'mapping': {}, 'last_run': None}
 
 

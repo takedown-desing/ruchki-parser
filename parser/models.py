@@ -20,17 +20,17 @@ def _common_prefix(skus):
 CODE_TAIL = re.compile(r'^(.*\S)\s+([A-Za-z]{0,3}\d{1,4}[A-Za-z]{0,3}|[A-Z]{2,3})$')
 
 
-def _code_bases(items):
+def _code_bases(items, names=None):
     """«Ручка Tupai 4213 5S 158» и «… 153»: последний короткий код, совпадающий с концом артикула, считается кодом покрытия.
     Срабатывает, только если хотя бы два товара сходятся к одной основе, иначе размер в конце названия не трогаем."""
     cand = {}
     for i, it in enumerate(items):
-        name = it['name'].strip()
+        name = (names[i] if names else it['name']).strip()
         # «… CC11RSB.C01»: код покрытия после точки, дефиса или косой черты в артикуле
         m = re.match(r'^(.*\S[A-Za-z0-9])([.\-/])([A-Za-z]{0,3}\d{1,4}[A-Za-z]{0,3})$', name)
         if m and (not it['sku'] or it['sku'].endswith(m.group(2) + m.group(3))):
             cand[i] = (m.group(1), m.group(3)); continue
-        m = CODE_TAIL.match(name)
+        m = CODE_TAIL.match(name) if not (names and names[i] != it['name']) else None
         if m and (not it['sku'] or it['sku'].replace(' ', '').endswith(m.group(2).replace(' ', ''))):
             cand[i] = (m.group(1), m.group(2))
     counts = {}
@@ -42,12 +42,14 @@ def _code_bases(items):
 def build_models(items, merge=True, brand_override=''):
     """Список моделей: {name, brand, sku, category, description, specs, url, variants:[...]}."""
     groups, order = {}, []
-    codes = _code_bases(items) if merge else {}
+    splits = [split_color(it['name']) for it in items]
+    codes = _code_bases(items, [b for b, _ in splits]) if merge else {}
     for idx, it in enumerate(items):
-        base, color = split_color(it['name'])
-        if idx in codes and not color:
+        base, color = splits[idx]
+        if idx in codes:
             base = codes[idx][0]
-            color = '' if it['finish'] else codes[idx][1]
+            if not color and not it['finish']:
+                color = codes[idx][1]
         finish = it['finish'] or color
         if it['finish'] and base == it['name']:
             # цвет пришёл отдельным полем, убираем его хвост из названия, если он там есть

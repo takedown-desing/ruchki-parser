@@ -1,0 +1,63 @@
+{
+ "site": "https://www.fimet-handles.com/",
+ "when": "2026-10-24 11:01",
+ "how": "страницы сайта",
+ "models": [
+  {
+   "name": "Tilt and turn handle",
+   "brand": "Fimet",
+   "sku": "",
+   "category": [
+    "Easy Line Collection"
+   ],
+   "description": "Easy Line Collection\n›\nTilt and turn handle\nref.\nsee table \"Details\"\n1160.DKRC.0845\n1160.DKRC.0845\ndesign\nDK with snap cover, 8 shots.\nAwards won\nMaterial\nAluminum\no\nAluminum\nFinishes\nand colors\nFBO\nopaque white 9016\n/\n,\nFNO\nMatte black RAL 9005\n/\n,\nF83\nPainted silver\n/\n,\nFGR\nAluminum-effect gray\n/\n,\nFBO\nopaque white 9016\nUV-resistant certified powder coating treatment.\nFNO\nMatte black RAL 9005\nUV-resistant certified powder coating treatment.\nF83\nPainted silver\nUV-resistant certified powder coating treatment.\nFGR\nAluminum-effect gray\nUV-resistant certified powder coating treatment.\nFBO\nopaque white 9016\nFNO\nMatte black RAL 9005\nF83\nPainted silver\nFGR\nAluminum-effect gray\nFBO\n/\nopaque white 9016\n,\nFNO\n/\nMatte black RAL 9005\n,\nF83\n/\nPainted silver\n,\nFGR\n/\nAluminum-effect gray\n,\nMore finishes on request\nKeyhole\nCylinder\nKey German\nkey\nWC\nCIECA\nDetail\nCODE\nA\nB\n1\nB2\nC\n*\nPrompt delivery upon request.\nGet the perfect solution for your needs.\nFill out the form\nDo you want to find out all the details of\n1160.DKRC.0845\nthis product\n?\nDownload the data sheet\nContact us",
+   "specs": {},
+   "url": "https://www.fimet-handles.com/prodotto/1160-dkrc-0845",
+   "variants": [
+    {
+     "finish": "",
+     "sku": "",
+     "price": null,
+     "currency": "RUB",
+     "in_stock": null,
+     "images": [
+      "https://cdn.prod.website-files.com/67e1179958a708eee3e4e8fd/6960e3576daf97f8a5644531_67f4e83c3efc336a22186bd4_67ec47a2487a3c86e831b895_Fimet_1160.DKRC.0845.83%2525202.avif"
+     ],
+     "local_images": [
+      "tilt-and-turn-handle-8813e4.jpg"
+     ],
+     "url": "https://www.fimet-handles.com/prodotto/1160-dkrc-0845",
+     "source": "page:dom"
+    }
+   ]
+  },
+  {
+   "name": "pull-handle Lift and slide",
+   "brand": "Fimet",
+   "sku": "",
+   "category": [
+    "Modern Collection"
+   ],
+   "description": "Modern Collection\n›\npull-handle Lift and slide\nref.\nsee table \"Details\"\n1320 AL\n1320 AL\ndesign\nNiche milling.\nAwards won\nMaterial\nZama\no\nZama\nFinishes\nand colors\nF05\nsatin chrome\n/\n,\nF05\nsatin chrome\nUV-resistant certified powder coating treatment.\nF05\nsatin chrome\nF05\n/\nsatin chrome\n,\nMore finishes on request\nKeyhole\nCylinder\nKey German\nkey\nWC\nCIECA\nDetail\nCODE\nA\nB\n1\nB2\nC\n*\nPrompt delivery upon request.\nGet the perfect solution for your needs.\nFill out the form\nDo you want to find out all the details of\n1320 AL\nthis product\n?\nDownload the data sheet\nContact us",
+   "specs": {},
+   "url": "https://www.fimet-handles.com/prodotto/1320-al",
+   "variants": [
+    {
+     "finish": "",
+     "sku": "",
+     "price": null,
+     "currency": "RUB",
+     "in_stock": null,
+     "images": [
+      "https://cdn.prod.website-files.com/67e1179958a708eee3e4e8fd/6960e356f4881e9f935db9e3_681221a6978d22dc05dcb2ea_67fe5bb921cdee902ac85961_Fimet_1320_AL_F05.avif"
+     ],
+     "local_images": [
+      "pull-handle-lift-and-slide-5d4adf.jpg"
+     ],
+     "url": "https://www.fimet-handles.com/prodotto/1320-al",
+     "source": "page:dom"
+    }
+   ]
+  }
+ ]
+}

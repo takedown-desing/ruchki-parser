@@ -1,0 +1,1106 @@
+[
+ {
+  "name": "TUPAI: наш магазин",
+  "brand": "Tupai",
+  "filter": "",
+  "limit": 3,
+  "merge": true,
+  "use_description": false,
+  "method": "auto",
+  "feed_url": "https://tupai-store.ru/yml.xml",
+  "feed_kind": "yml",
+  "mapping": {},
+  "last_run": {
+   "when": "2026-10-24 11:00",
+   "ok": true,
+   "how": "фид yml",
+   "models": 1,
+   "variants": 3,
+   "images": 2,
+   "no_price": 0,
+   "no_photo": 1,
+   "changes": {
+    "new": 3,
+    "gone": 0,
+    "price": 0,
+    "stock": 0
+   },
+   "seconds": 0,
+   "warnings": []
+  },
+  "id": "tupai-store-ru",
+  "url": "https://tupai-store.ru/",
+  "added": "2026-10-24 09:39"
+ },
+ {
+  "name": "Colombo: наш магазин, дверные ручки",
+  "brand": "Colombo Design",
+  "filter": "",
+  "limit": 3,
+  "merge": true,
+  "use_description": false,
+  "method": "auto",
+  "feed_url": "",
+  "feed_kind": "",
+  "mapping": {},
+  "last_run": {
+   "when": "2026-10-24 11:00",
+   "ok": true,
+   "how": "страницы сайта",
+   "models": 1,
+   "variants": 3,
+   "images": 18,
+   "no_price": 0,
+   "no_photo": 0,
+   "changes": {
+    "new": 3,
+    "gone": 0,
+    "price": 0,
+    "stock": 0
+   },
+   "seconds": 12,
+   "warnings": []
+  },
+  "id": "colombo-pro-category-dvernye-ruchki",
+  "url": "https://colombo.pro/category/dvernye-ruchki/",
+  "added": "2026-10-24 09:39"
+ },
+ {
+  "name": "Aprile: aprilehandles.com",
+  "brand": "Aprile",
+  "filter": "",
+  "limit": 3,
+  "merge": true,
+  "use_description": false,
+  "method": "auto",
+  "feed_url": "",
+  "feed_kind": "",
+  "mapping": {},
+  "last_run": {
+   "when": "2026-10-24 11:00",
+   "ok": true,
+   "how": "страницы сайта",
+   "models": 3,
+   "variants": 3,
+   "images": 18,
+   "no_price": 3,
+   "no_photo": 0,
+   "changes": {
+    "new": 3,
+    "gone": 0,
+    "price": 0,
+    "stock": 0
+   },
+   "seconds": 14,
+   "warnings": [
+    "цен на сайте нет (возможно, это каталог производителя): возьмите цены из прайса поставщика"
+   ]
+  },
+  "id": "aprilehandles-com",
+  "url": "https://aprilehandles.com/",
+  "added": "2026-10-24 09:39"
+ },
+ {
+  "name": "Aprile/Tupai: fellini-handles.ru",
+  "brand": "",
+  "filter": "",
+  "limit": 3,
+  "merge": true,
+  "use_description": false,
+  "method": "auto",
+  "feed_url": "",
+  "feed_kind": "",
+  "mapping": {},
+  "last_run": {
+   "when": "2026-10-24 11:00",
+   "ok": true,
+   "how": "страницы сайта",
+   "models": 3,
+   "variants": 3,
+   "images": 18,
+   "no_price": 0,
+   "no_photo": 0,
+   "changes": {
+    "new": 3,
+    "gone": 0,
+    "price": 0,
+    "stock": 0
+   },
+   "seconds": 25,
+   "warnings": [
+    "раздел товара на сайте не указан"
+   ]
+  },
+  "id": "fellini-handles-ru",
+  "url": "https://fellini-handles.ru/",
+  "added": "2026-10-24 09:39"
+ },
+ {
+  "name": "Tupai: tupai.pt",
+  "brand": "Tupai",
+  "filter": "",
+  "limit": 3,
+  "merge": true,
+  "use_description": false,
+  "method": "auto",
+  "feed_url": "",
+  "feed_kind": "",
+  "mapping": {},
+  "last_run": {
+   "when": "2026-10-24 11:01",
+   "ok": true,
+   "how": "страницы сайта",
+   "models": 3,
+   "variants": 3,
+   "images": 18,
+   "no_price": 3,
+   "no_photo": 0,
+   "changes": {
+    "new": 3,
+    "gone": 0,
+    "price": 0,
+    "stock": 0
+   },
+   "seconds": 14,
+   "warnings": [
+    "цен на сайте нет (возможно, это каталог производителя): возьмите цены из прайса поставщика",
+    "раздел товара на сайте не указан"
+   ]
+  },
+  "id": "tupai-pt",
+  "url": "https://www.tupai.pt/",
+  "added": "2026-10-24 09:39"
+ },
+ {
+  "name": "Tupai: protect-system.pro",
+  "brand": "Tupai",
+  "filter": "Tupai",
+  "limit": 3,
+  "merge": true,
+  "use_description": false,
+  "method": "auto",
+  "feed_url": "",
+  "feed_kind": "",
+  "mapping": {},
+  "last_run": {
+   "when": "2026-10-24 11:01",
+   "ok": true,
+   "how": "страницы сайта",
+   "models": 3,
+   "variants": 3,
+   "images": 17,
+   "no_price": 0,
+   "no_photo": 0,
+   "changes": {
+    "new": 3,
+    "gone": 0,
+    "price": 0,
+    "stock": 0
+   },
+   "seconds": 7,
+   "warnings": []
+  },
+  "id": "protect-system-pro",
+  "url": "https://protect-system.pro/",
+  "added": "2026-10-24 09:39"
+ },
+ {
+  "name": "Tupai: furnitura96.ru",
+  "brand": "Tupai",
+  "filter": "Tupai",
+  "limit": 3,
+  "merge": true,
+  "use_description": false,
+  "method": "auto",
+  "feed_url": "",
+  "feed_kind": "",
+  "mapping": {},
+  "last_run": {
+   "when": "2026-10-24 11:01",
+   "ok": true,
+   "how": "страницы сайта",
+   "models": 3,
+   "variants": 3,
+   "images": 12,
+   "no_price": 0,
+   "no_photo": 0,
+   "changes": {
+    "new": 3,
+    "gone": 0,
+    "price": 0,
+    "stock": 0
+   },
+   "seconds": 17,
+   "warnings": []
+  },
+  "id": "furnitura96-ru",
+  "url": "https://furnitura96.ru/",
+  "added": "2026-10-24 09:39"
+ },
+ {
+  "name": "Verum: verumitaly.com",
+  "brand": "Verum",
+  "filter": "",
+  "limit": 3,
+  "merge": true,
+  "use_description": false,
+  "method": "auto",
+  "feed_url": "",
+  "feed_kind": "",
+  "mapping": {},
+  "last_run": {
+   "when": "2026-10-24 11:01",
+   "ok": false,
+   "stopped": true,
+   "problem": "На проверенных страницах не нашлось карточек товаров: нет названия, цены или фото товара. Если товары на сайте есть, вставьте адрес раздела каталога вместо главной."
+  },
+  "id": "verumitaly-com-en",
+  "url": "https://www.verumitaly.com/en/",
+  "added": "2026-10-24 09:39"
+ },
+ {
+  "name": "Verum: protect-system.pro",
+  "brand": "Verum",
+  "filter": "",
+  "limit": 3,
+  "merge": true,
+  "use_description": false,
+  "method": "auto",
+  "feed_url": "",
+  "feed_kind": "",
+  "mapping": {},
+  "last_run": {
+   "when": "2026-10-24 11:01",
+   "ok": true,
+   "how": "страницы сайта",
+   "models": 3,
+   "variants": 3,
+   "images": 18,
+   "no_price": 0,
+   "no_photo": 0,
+   "changes": {
+    "new": 3,
+    "gone": 0,
+    "price": 0,
+    "stock": 0
+   },
+   "seconds": 6,
+   "warnings": []
+  },
+  "id": "protect-system-pro-search-query-verum",
+  "url": "https://protect-system.pro/search/?query=Verum",
+  "added": "2026-10-24 09:39"
+ },
+ {
+  "name": "Fimet: fimet-handles.com",
+  "brand": "Fimet",
+  "filter": "",
+  "limit": 3,
+  "merge": true,
+  "use_description": false,
+  "method": "auto",
+  "feed_url": "",
+  "feed_kind": "",
+  "mapping": {},
+  "last_run": {
+   "when": "2026-10-24 11:01",
+   "ok": true,
+   "how": "страницы сайта",
+   "models": 2,
+   "variants": 2,
+   "images": 3,
+   "no_price": 2,
+   "no_photo": 0,
+   "changes": {
+    "new": 2,
+    "gone": 0,
+    "price": 0,
+    "stock": 0
+   },
+   "seconds": 5,
+   "warnings": [
+    "цен на сайте нет (возможно, это каталог производителя): возьмите цены из прайса поставщика"
+   ]
+  },
+  "id": "fimet-handles-com",
+  "url": "https://www.fimet-handles.com/",
+  "added": "2026-10-24 09:39"
+ },
+ {
+  "name": "Fimet: furnitura96.ru",
+  "brand": "Fimet",
+  "filter": "",
+  "limit": 3,
+  "merge": true,
+  "use_description": false,
+  "method": "auto",
+  "feed_url": "",
+  "feed_kind": "",
+  "mapping": {},
+  "last_run": {
+   "when": "2026-10-24 11:02",
+   "ok": true,
+   "how": "страницы сайта",
+   "models": 2,
+   "variants": 3,
+   "images": 6,
+   "no_price": 0,
+   "no_photo": 0,
+   "changes": {
+    "new": 3,
+    "gone": 0,
+    "price": 0,
+    "stock": 0
+   },
+   "seconds": 18,
+   "warnings": []
+  },
+  "id": "furnitura96-ru-search-search-fimet",
+  "url": "https://furnitura96.ru/search/?search=FIMET",
+  "added": "2026-10-24 09:39"
+ },
+ {
+  "name": "Fimet/AGB: furmatica.ru",
+  "brand": "",
+  "filter": "",
+  "limit": 3,
+  "merge": true,
+  "use_description": false,
+  "method": "auto",
+  "feed_url": "",
+  "feed_kind": "",
+  "mapping": {},
+  "last_run": {
+   "when": "2026-10-24 11:02",
+   "ok": true,
+   "how": "страницы сайта",
+   "models": 3,
+   "variants": 3,
+   "images": 15,
+   "no_price": 3,
+   "no_photo": 0,
+   "changes": {
+    "new": 3,
+    "gone": 0,
+    "price": 0,
+    "stock": 0
+   },
+   "seconds": 9,
+   "warnings": [
+    "цен на сайте нет (возможно, это каталог производителя): возьмите цены из прайса поставщика"
+   ]
+  },
+  "id": "furmatica-ru",
+  "url": "https://furmatica.ru/",
+  "added": "2026-10-24 09:39"
+ },
+ {
+  "name": "AGB: agb.it",
+  "brand": "AGB",
+  "filter": "",
+  "limit": 3,
+  "merge": true,
+  "use_description": false,
+  "method": "auto",
+  "feed_url": "",
+  "feed_kind": "",
+  "mapping": {},
+  "last_run": {
+   "when": "2026-10-24 11:02",
+   "ok": false,
+   "stopped": true,
+   "problem": "Карточки товаров находятся, но фото на них нет: сайт подгружает фото особым способом, их не видно даже в браузере. Возьмите фото у дилера или у поставщика."
+  },
+  "id": "agb-it",
+  "url": "https://www.agb.it/",
+  "added": "2026-10-24 09:39"
+ },
+ {
+  "name": "AGB: tlock.ru",
+  "brand": "AGB",
+  "filter": "",
+  "limit": 3,
+  "merge": true,
+  "use_description": false,
+  "method": "auto",
+  "feed_url": "",
+  "feed_kind": "",
+  "mapping": {},
+  "last_run": {
+   "when": "2026-10-24 11:07",
+   "ok": true,
+   "how": "страницы сайта",
+   "models": 3,
+   "variants": 3,
+   "images": 3,
+   "no_price": 0,
+   "no_photo": 0,
+   "changes": {
+    "new": 3,
+    "gone": 0,
+    "price": 0,
+    "stock": 0
+   },
+   "seconds": 319,
+   "warnings": []
+  },
+  "id": "tlock-ru-search-q-agb",
+  "url": "https://www.tlock.ru/search/?q=AGB",
+  "added": "2026-10-24 09:39"
+ },
+ {
+  "name": "AGB: rir.ru",
+  "brand": "AGB",
+  "filter": "",
+  "limit": 3,
+  "merge": true,
+  "use_description": false,
+  "method": "auto",
+  "feed_url": "",
+  "feed_kind": "",
+  "mapping": {},
+  "last_run": {
+   "when": "2026-10-24 11:08",
+   "ok": true,
+   "how": "страницы сайта",
+   "models": 1,
+   "variants": 1,
+   "images": 3,
+   "no_price": 0,
+   "no_photo": 0,
+   "changes": {
+    "new": 1,
+    "gone": 0,
+    "price": 0,
+    "stock": 0
+   },
+   "seconds": 38,
+   "warnings": []
+  },
+  "id": "rir-ru-search-index-php-q-agb-s",
+  "url": "https://rir.ru/search/index.php?q=AGB&s=",
+  "added": "2026-10-24 09:39"
+ },
+ {
+  "name": "AGB: rfmlocks.ru",
+  "brand": "AGB",
+  "filter": "",
+  "limit": 3,
+  "merge": true,
+  "use_description": false,
+  "method": "auto",
+  "feed_url": "",
+  "feed_kind": "",
+  "mapping": {},
+  "last_run": {
+   "when": "2026-10-24 11:08",
+   "ok": true,
+   "how": "страницы сайта",
+   "models": 1,
+   "variants": 3,
+   "images": 12,
+   "no_price": 0,
+   "no_photo": 0,
+   "changes": {
+    "new": 3,
+    "gone": 0,
+    "price": 0,
+    "stock": 0
+   },
+   "seconds": 8,
+   "warnings": []
+  },
+  "id": "rfmlocks-ru-search-q-agb",
+  "url": "https://rfmlocks.ru/search/?q=AGB",
+  "added": "2026-10-24 09:39"
+ },
+ {
+  "name": "LockStyle: lockstyle.by",
+  "brand": "LockStyle",
+  "filter": "",
+  "limit": 3,
+  "merge": true,
+  "use_description": false,
+  "method": "auto",
+  "feed_url": "",
+  "feed_kind": "",
+  "mapping": {},
+  "last_run": {
+   "when": "2026-10-24 11:08",
+   "ok": false,
+   "stopped": true,
+   "problem": "Сайт закрыт для посетителей из России: региональная блокировка. Нужен файл или фид от поставщика либо сбор с прокси нужной страны."
+  },
+  "id": "lockstyle-by",
+  "url": "https://lockstyle.by/",
+  "added": "2026-10-24 09:39"
+ },
+ {
+  "name": "LockStyle: lockstyle-design.ru",
+  "brand": "LockStyle",
+  "filter": "",
+  "limit": 3,
+  "merge": true,
+  "use_description": false,
+  "method": "auto",
+  "feed_url": "",
+  "feed_kind": "",
+  "mapping": {},
+  "last_run": {
+   "when": "2026-10-24 11:09",
+   "ok": true,
+   "how": "страницы сайта",
+   "models": 3,
+   "variants": 3,
+   "images": 6,
+   "no_price": 0,
+   "no_photo": 0,
+   "changes": {
+    "new": 3,
+    "gone": 0,
+    "price": 0,
+    "stock": 0
+   },
+   "seconds": 52,
+   "warnings": [
+    "раздел товара на сайте не указан"
+   ]
+  },
+  "id": "lockstyle-design-ru",
+  "url": "https://lockstyle-design.ru/",
+  "added": "2026-10-24 09:39"
+ },
+ {
+  "name": "Colombo Design/Antaloghia: colombodesign.com",
+  "brand": "",
+  "filter": "",
+  "limit": 3,
+  "merge": true,
+  "use_description": false,
+  "method": "auto",
+  "feed_url": "",
+  "feed_kind": "",
+  "mapping": {},
+  "last_run": {
+   "when": "2026-10-24 11:10",
+   "ok": false,
+   "stopped": true,
+   "problem": "Фото товаров показаны в 3D-просмотрщике во встроенном окне, обычных фото на страницах нет. Скопировать фото невозможно: возьмите их у дилера или запросите у поставщика."
+  },
+  "id": "colombodesign-com",
+  "url": "https://www.colombodesign.com/",
+  "added": "2026-10-24 09:39"
+ },
+ {
+  "name": "Colombo Design: kronakoblenz.ru",
+  "brand": "Colombo Design",
+  "filter": "",
+  "limit": 3,
+  "merge": true,
+  "use_description": false,
+  "method": "auto",
+  "feed_url": "",
+  "feed_kind": "",
+  "mapping": {},
+  "last_run": {
+   "when": "2026-10-24 11:10",
+   "ok": true,
+   "how": "страницы сайта",
+   "models": 2,
+   "variants": 2,
+   "images": 3,
+   "no_price": 2,
+   "no_photo": 0,
+   "changes": {
+    "new": 2,
+    "gone": 0,
+    "price": 0,
+    "stock": 0
+   },
+   "seconds": 4,
+   "warnings": [
+    "цен на сайте нет (возможно, это каталог производителя): возьмите цены из прайса поставщика",
+    "раздел товара на сайте не указан"
+   ]
+  },
+  "id": "kronakoblenz-ru-colombo-design-handles-contemporary",
+  "url": "https://kronakoblenz.ru/colombo-design/handles/contemporary",
+  "added": "2026-10-24 09:39"
+ },
+ {
+  "name": "FRATELLI CATTINI/VENEZIA: made-italy.ru",
+  "brand": "",
+  "filter": "",
+  "limit": 3,
+  "merge": true,
+  "use_description": false,
+  "method": "auto",
+  "feed_url": "",
+  "feed_kind": "",
+  "mapping": {},
+  "last_run": {
+   "when": "2026-10-24 11:10",
+   "ok": true,
+   "how": "страницы сайта",
+   "models": 3,
+   "variants": 3,
+   "images": 9,
+   "no_price": 3,
+   "no_photo": 0,
+   "changes": {
+    "new": 3,
+    "gone": 0,
+    "price": 0,
+    "stock": 0
+   },
+   "seconds": 29,
+   "warnings": [
+    "цен на сайте нет (возможно, это каталог производителя): возьмите цены из прайса поставщика"
+   ]
+  },
+  "id": "made-italy-ru",
+  "url": "https://made-italy.ru/",
+  "added": "2026-10-24 09:39"
+ },
+ {
+  "name": "FRATELLI CATTINI: todoor.ru",
+  "brand": "FRATELLI CATTINI",
+  "filter": "",
+  "limit": 3,
+  "merge": true,
+  "use_description": false,
+  "method": "auto",
+  "feed_url": "",
+  "feed_kind": "",
+  "mapping": {},
+  "last_run": {
+   "when": "2026-10-24 11:11",
+   "ok": true,
+   "how": "страницы сайта",
+   "models": 3,
+   "variants": 3,
+   "images": 7,
+   "no_price": 0,
+   "no_photo": 0,
+   "changes": {
+    "new": 3,
+    "gone": 0,
+    "price": 0,
+    "stock": 0
+   },
+   "seconds": 35,
+   "warnings": []
+  },
+  "id": "todoor-ru-shop-q-fratelli-20cattini",
+  "url": "https://todoor.ru/shop/?q=Fratelli%20cattini",
+  "added": "2026-10-24 09:39"
+ },
+ {
+  "name": "VENEZIA: todoor.ru",
+  "brand": "VENEZIA",
+  "filter": "",
+  "limit": 3,
+  "merge": true,
+  "use_description": false,
+  "method": "auto",
+  "feed_url": "",
+  "feed_kind": "",
+  "mapping": {},
+  "last_run": {
+   "when": "2026-10-24 11:12",
+   "ok": true,
+   "how": "страницы сайта",
+   "models": 3,
+   "variants": 3,
+   "images": 9,
+   "no_price": 0,
+   "no_photo": 0,
+   "changes": {
+    "new": 3,
+    "gone": 0,
+    "price": 0,
+    "stock": 0
+   },
+   "seconds": 54,
+   "warnings": []
+  },
+  "id": "todoor-ru-shop-q-venezia",
+  "url": "https://todoor.ru/shop/?q=VENEZIA",
+  "added": "2026-10-24 09:39"
+ },
+ {
+  "name": "Armadillo: tlock.ru",
+  "brand": "Armadillo",
+  "filter": "",
+  "limit": 3,
+  "merge": true,
+  "use_description": false,
+  "method": "auto",
+  "feed_url": "",
+  "feed_kind": "",
+  "mapping": {},
+  "last_run": {
+   "when": "2026-10-24 11:17",
+   "ok": true,
+   "how": "страницы сайта",
+   "models": 3,
+   "variants": 3,
+   "images": 14,
+   "no_price": 0,
+   "no_photo": 0,
+   "changes": {
+    "new": 3,
+    "gone": 0,
+    "price": 0,
+    "stock": 0
+   },
+   "seconds": 331,
+   "warnings": []
+  },
+  "id": "tlock-ru-search-q-armadillo",
+  "url": "https://www.tlock.ru/search/?q=Armadillo",
+  "added": "2026-10-24 09:39"
+ },
+ {
+  "name": "Class/FORME/Melodia: fadex.it",
+  "brand": "",
+  "filter": "",
+  "limit": 3,
+  "merge": true,
+  "use_description": false,
+  "method": "auto",
+  "feed_url": "",
+  "feed_kind": "",
+  "mapping": {},
+  "last_run": {
+   "when": "2026-10-24 11:17",
+   "ok": false,
+   "stopped": true,
+   "problem": "На проверенных страницах не нашлось карточек товаров: нет названия, цены или фото товара. Если товары на сайте есть, вставьте адрес раздела каталога вместо главной."
+  },
+  "id": "fadex-it",
+  "url": "https://www.fadex.it/",
+  "added": "2026-10-24 09:39"
+ },
+ {
+  "name": "Class: classitaly.ru",
+  "brand": "Class",
+  "filter": "",
+  "limit": 3,
+  "merge": true,
+  "use_description": false,
+  "method": "auto",
+  "feed_url": "",
+  "feed_kind": "",
+  "mapping": {},
+  "last_run": {
+   "when": "2026-10-24 11:28",
+   "ok": true,
+   "how": "страницы сайта",
+   "models": 3,
+   "variants": 3,
+   "images": 12,
+   "no_price": 0,
+   "no_photo": 0,
+   "changes": {
+    "new": 2,
+    "gone": 2,
+    "price": 1,
+    "stock": 1
+   },
+   "seconds": 23,
+   "warnings": []
+  },
+  "id": "classitaly-ru-search-index-php-q-class",
+  "url": "https://classitaly.ru/search/index.php?q=CLASS",
+  "added": "2026-10-24 09:39"
+ },
+ {
+  "name": "FORME: classitaly.ru",
+  "brand": "FORME",
+  "filter": "",
+  "limit": 3,
+  "merge": true,
+  "use_description": false,
+  "method": "auto",
+  "feed_url": "",
+  "feed_kind": "",
+  "mapping": {},
+  "last_run": {
+   "when": "2026-10-24 11:52",
+   "ok": true,
+   "how": "страницы сайта",
+   "models": 3,
+   "variants": 3,
+   "images": 13,
+   "no_price": 0,
+   "no_photo": 0,
+   "changes": {
+    "new": 3,
+    "gone": 3,
+    "price": 0,
+    "stock": 0
+   },
+   "seconds": 34,
+   "warnings": []
+  },
+  "id": "classitaly-ru-search-index-php-q-forme",
+  "url": "https://classitaly.ru/search/index.php?q=FORME",
+  "added": "2026-10-24 09:39"
+ },
+ {
+  "name": "Melodia: classitaly.ru",
+  "brand": "Melodia",
+  "filter": "",
+  "limit": 3,
+  "merge": true,
+  "use_description": false,
+  "method": "auto",
+  "feed_url": "",
+  "feed_kind": "",
+  "mapping": {},
+  "last_run": {
+   "when": "2026-10-24 11:53",
+   "ok": true,
+   "how": "страницы сайта",
+   "models": 3,
+   "variants": 3,
+   "images": 12,
+   "no_price": 0,
+   "no_photo": 0,
+   "changes": {
+    "new": 3,
+    "gone": 3,
+    "price": 0,
+    "stock": 0
+   },
+   "seconds": 39,
+   "warnings": []
+  },
+  "id": "classitaly-ru-search-index-php-q-melodia",
+  "url": "https://classitaly.ru/search/index.php?q=Melodia",
+  "added": "2026-10-24 09:39"
+ },
+ {
+  "name": "Kronakoblenz: kronakoblenz.com",
+  "brand": "Kronakoblenz",
+  "filter": "",
+  "limit": 3,
+  "merge": true,
+  "use_description": false,
+  "method": "auto",
+  "feed_url": "",
+  "feed_kind": "",
+  "mapping": {},
+  "last_run": {
+   "when": "2026-10-24 11:51",
+   "ok": true,
+   "how": "страницы сайта",
+   "models": 3,
+   "variants": 3,
+   "images": 18,
+   "no_price": 3,
+   "no_photo": 0,
+   "changes": {
+    "new": 3,
+    "gone": 3,
+    "price": 0,
+    "stock": 0
+   },
+   "seconds": 29,
+   "warnings": [
+    "цен на сайте нет (возможно, это каталог производителя): возьмите цены из прайса поставщика",
+    "раздел товара на сайте не указан"
+   ]
+  },
+  "id": "kronakoblenz-com-en-products",
+  "url": "https://www.kronakoblenz.com/en/products",
+  "added": "2026-10-24 09:39"
+ },
+ {
+  "name": "Kronakoblenz: kronakoblenz.ru",
+  "brand": "Kronakoblenz",
+  "filter": "",
+  "limit": 3,
+  "merge": true,
+  "use_description": false,
+  "method": "auto",
+  "feed_url": "",
+  "feed_kind": "",
+  "mapping": {},
+  "last_run": {
+   "when": "2026-10-24 11:53",
+   "ok": false,
+   "stopped": true,
+   "problem": "Поиск на сайте по «KRONA KOBLENZ» выдаёт не карточки товаров (статьи, разделы или страницы без названия, цены и фото). Вставьте адрес раздела каталога с нужными товарами."
+  },
+  "id": "kronakoblenz-ru-produkty-search-krona-20koblenz",
+  "url": "https://kronakoblenz.ru/produkty?search=KRONA%20KOBLENZ",
+  "added": "2026-10-24 09:39"
+ },
+ {
+  "name": "Extreza: kromus.ru",
+  "brand": "Extreza",
+  "filter": "Extreza",
+  "limit": 3,
+  "merge": true,
+  "use_description": false,
+  "method": "auto",
+  "feed_url": "",
+  "feed_kind": "",
+  "mapping": {},
+  "last_run": {
+   "when": "2026-10-24 11:25",
+   "ok": false,
+   "stopped": true,
+   "problem": "Сайт защищён Cloudflare: вместо страниц отдаётся проверка «вы не робот». Автоматический сбор невозможен, нужен файл или фид от поставщика."
+  },
+  "id": "kromus-ru",
+  "url": "https://kromus.ru/",
+  "added": "2026-10-24 09:39"
+ },
+ {
+  "name": "Pamar: pamarworld.com",
+  "brand": "Pamar",
+  "filter": "",
+  "limit": 3,
+  "merge": true,
+  "use_description": false,
+  "method": "auto",
+  "feed_url": "",
+  "feed_kind": "",
+  "mapping": {},
+  "last_run": {
+   "when": "2026-10-24 11:24",
+   "ok": false,
+   "stopped": true,
+   "problem": "На проверенных страницах не нашлось карточек товаров: нет названия, цены или фото товара. Если товары на сайте есть, вставьте адрес раздела каталога вместо главной."
+  },
+  "id": "pamarworld-com",
+  "url": "https://www.pamarworld.com/",
+  "added": "2026-10-24 09:39"
+ },
+ {
+  "name": "Pamar: protect-system.pro",
+  "brand": "Pamar",
+  "filter": "",
+  "limit": 3,
+  "merge": true,
+  "use_description": false,
+  "method": "auto",
+  "feed_url": "",
+  "feed_kind": "",
+  "mapping": {},
+  "last_run": {
+   "when": "2026-10-24 11:24",
+   "ok": true,
+   "how": "страницы сайта",
+   "models": 3,
+   "variants": 3,
+   "images": 18,
+   "no_price": 0,
+   "no_photo": 0,
+   "changes": {
+    "new": 3,
+    "gone": 0,
+    "price": 0,
+    "stock": 0
+   },
+   "seconds": 6,
+   "warnings": []
+  },
+  "id": "protect-system-pro-search-query-pamar",
+  "url": "https://protect-system.pro/search/?query=Pamar",
+  "added": "2026-10-24 09:39"
+ },
+ {
+  "name": "Otlav: otlav.it",
+  "brand": "Otlav",
+  "filter": "",
+  "limit": 3,
+  "merge": true,
+  "use_description": false,
+  "method": "auto",
+  "feed_url": "",
+  "feed_kind": "",
+  "mapping": {},
+  "last_run": {
+   "when": "2026-10-24 11:25",
+   "ok": true,
+   "how": "страницы сайта",
+   "models": 3,
+   "variants": 3,
+   "images": 10,
+   "no_price": 3,
+   "no_photo": 0,
+   "changes": {
+    "new": 3,
+    "gone": 0,
+    "price": 0,
+    "stock": 0
+   },
+   "seconds": 27,
+   "warnings": [
+    "цен на сайте нет (возможно, это каталог производителя): возьмите цены из прайса поставщика",
+    "раздел товара на сайте не указан"
+   ]
+  },
+  "id": "otlav-it",
+  "url": "https://www.otlav.it/",
+  "added": "2026-10-24 09:39"
+ },
+ {
+  "name": "Otlav: tbm.ru",
+  "brand": "Otlav",
+  "filter": "",
+  "limit": 3,
+  "merge": true,
+  "use_description": false,
+  "method": "auto",
+  "feed_url": "",
+  "feed_kind": "",
+  "mapping": {},
+  "last_run": {
+   "when": "2026-10-24 11:24",
+   "ok": false,
+   "stopped": true,
+   "problem": "Карточки товаров находятся, но фото на них нет: сайт подгружает фото особым способом, их не видно даже в браузере. Возьмите фото у дилера или у поставщика."
+  },
+  "id": "tbm-ru-search-catalog-query-otlav",
+  "url": "https://www.tbm.ru/search/catalog?query=Otlav",
+  "added": "2026-10-24 09:39"
+ },
+ {
+  "name": "Morelli: morelli.ru",
+  "brand": "Morelli",
+  "filter": "",
+  "limit": 3,
+  "merge": true,
+  "use_description": false,
+  "method": "auto",
+  "feed_url": "",
+  "feed_kind": "",
+  "mapping": {},
+  "last_run": {
+   "when": "2026-10-24 11:24",
+   "ok": true,
+   "how": "страницы сайта",
+   "models": 3,
+   "variants": 3,
+   "images": 6,
+   "no_price": 0,
+   "no_photo": 0,
+   "changes": {
+    "new": 3,
+    "gone": 0,
+    "price": 0,
+    "stock": 0
+   },
+   "seconds": 16,
+   "warnings": []
+  },
+  "id": "morelli-ru",
+  "url": "https://morelli.ru/",
+  "added": "2026-10-24 09:39"
+ }
+]

@@ -1,0 +1,118 @@
+{
+ "site": "https://colombo.pro/category/dvernye-ruchki/",
+ "when": "2026-10-24 11:00",
+ "how": "страницы сайта",
+ "models": [
+  {
+   "name": "Дверная ручка Colombo Design ONE CC11RSB",
+   "brand": "Colombo Design",
+   "sku": "CC11RSB",
+   "category": [
+    "ДВЕРНЫЕ РУЧКИ",
+    "Дверные ручки"
+   ],
+   "description": "Дверная ручка, комплект на дверь",
+   "specs": {
+    "Стилистика дизайна": "Современный",
+    "Форма розетки": "Круглая",
+    "Тип продукта": "Дверная ручка",
+    "Страна": "Италия",
+    "Материал": "Хромаль",
+    "Коллекция": "ONE"
+   },
+   "url": "https://colombo.pro/product/Colombo-Design-ONE-CC11RSB.C01/",
+   "variants": [
+    {
+     "finish": "белый матовый",
+     "sku": "CC11RSB.C01",
+     "price": 4850.0,
+     "currency": "RUB",
+     "in_stock": true,
+     "images": [
+      "https://colombo.pro/wa-data/public/shop/products/12/29/2912/images/8219/8219.970.png",
+      "https://colombo.pro/wa-data/public/shop/products/12/29/2912/images/8111/8111.970.jpg",
+      "https://colombo.pro/wa-data/public/shop/products/12/29/2912/images/12263/12263.970.png",
+      "https://colombo.pro/wa-data/public/shop/products/12/29/2912/images/8112/8112.970.jpg",
+      "https://colombo.pro/wa-data/public/shop/products/12/29/2912/images/8219/8219.0x460.png",
+      "https://colombo.pro/wa-data/public/shop/products/12/29/2912/images/8111/8111.0x460.jpg",
+      "https://colombo.pro/wa-data/public/shop/products/12/29/2912/images/12263/12263.0x460.png",
+      "https://colombo.pro/wa-data/public/shop/products/12/29/2912/images/8112/8112.0x460.jpg",
+      "https://colombo.pro/wa-data/public/shop/products/27/29/2927/images/8920/8920.240.png",
+      "https://colombo.pro/wa-data/public/shop/products/22/29/2922/images/8838/8838.240.png",
+      "https://colombo.pro/wa-data/public/shop/products/12/29/2912/images/8219/8219.750x0.png"
+     ],
+     "local_images": [
+      "dvernaya-ruchka-colombo-design-one-cc11rsb-c01-belyy-matovyy-442ffe.jpg",
+      "dvernaya-ruchka-colombo-design-one-cc11rsb-c01-belyy-matovyy-ba92d6.jpg",
+      "dvernaya-ruchka-colombo-design-one-cc11rsb-c01-belyy-matovyy-003eaf.jpg",
+      "dvernaya-ruchka-colombo-design-one-cc11rsb-c01-belyy-matovyy-706a17.jpg",
+      "dvernaya-ruchka-colombo-design-one-cc11rsb-c01-belyy-matovyy-de2a3d.jpg",
+      "dvernaya-ruchka-colombo-design-one-cc11rsb-c01-belyy-matovyy-b7e356.jpg"
+     ],
+     "url": "https://colombo.pro/product/Colombo-Design-ONE-CC11RSB.C01/",
+     "source": "page:microdata"
+    },
+    {
+     "finish": "бронза матовая",
+     "sku": "CC11RSB.C02",
+     "price": 4850.0,
+     "currency": "RUB",
+     "in_stock": true,
+     "images": [
+      "https://colombo.pro/wa-data/public/shop/products/18/29/2918/images/8220/8220.970.png",
+      "https://colombo.pro/wa-data/public/shop/products/18/29/2918/images/8125/8125.970.jpg",
+      "https://colombo.pro/wa-data/public/shop/products/18/29/2918/images/12264/12264.970.png",
+      "https://colombo.pro/wa-data/public/shop/products/18/29/2918/images/8124/8124.970.jpg",
+      "https://colombo.pro/wa-data/public/shop/products/18/29/2918/images/8220/8220.0x460.png",
+      "https://colombo.pro/wa-data/public/shop/products/18/29/2918/images/8125/8125.0x460.jpg",
+      "https://colombo.pro/wa-data/public/shop/products/18/29/2918/images/12264/12264.0x460.png",
+      "https://colombo.pro/wa-data/public/shop/products/18/29/2918/images/8124/8124.0x460.jpg",
+      "https://colombo.pro/wa-data/public/shop/products/28/29/2928/images/8921/8921.240.png",
+      "https://colombo.pro/wa-data/public/shop/products/23/29/2923/images/8933/8933.240.png",
+      "https://colombo.pro/wa-data/public/shop/products/18/29/2918/images/8220/8220.750x0.png"
+     ],
+     "local_images": [
+      "dvernaya-ruchka-colombo-design-one-cc11rsb-c02-tsvet-bronza-d77022.jpg",
+      "dvernaya-ruchka-colombo-design-one-cc11rsb-c02-tsvet-bronza-8c20cc.jpg",
+      "dvernaya-ruchka-colombo-design-one-cc11rsb-c02-tsvet-bronza-c87604.jpg",
+      "dvernaya-ruchka-colombo-design-one-cc11rsb-c02-tsvet-bronza-2b00b3.jpg",
+      "dvernaya-ruchka-colombo-design-one-cc11rsb-c02-tsvet-bronza-519d07.jpg",
+      "dvernaya-ruchka-colombo-design-one-cc11rsb-c02-tsvet-bronza-b74b46.jpg"
+     ],
+     "url": "https://colombo.pro/product/Colombo-Design-ONE-CC11RSB.C02/",
+     "source": "page:microdata"
+    },
+    {
+     "finish": "черный матовый",
+     "sku": "CC11RSB.C03",
+     "price": 4850.0,
+     "currency": "RUB",
+     "in_stock": true,
+     "images": [
+      "https://colombo.pro/wa-data/public/shop/products/19/29/2919/images/8221/8221.970.png",
+      "https://colombo.pro/wa-data/public/shop/products/19/29/2919/images/8128/8128.970.jpg",
+      "https://colombo.pro/wa-data/public/shop/products/19/29/2919/images/12265/12265.970.png",
+      "https://colombo.pro/wa-data/public/shop/products/19/29/2919/images/8127/8127.970.jpg",
+      "https://colombo.pro/wa-data/public/shop/products/19/29/2919/images/8221/8221.0x460.png",
+      "https://colombo.pro/wa-data/public/shop/products/19/29/2919/images/8128/8128.0x460.jpg",
+      "https://colombo.pro/wa-data/public/shop/products/19/29/2919/images/12265/12265.0x460.png",
+      "https://colombo.pro/wa-data/public/shop/products/19/29/2919/images/8127/8127.0x460.jpg",
+      "https://colombo.pro/wa-data/public/shop/products/29/29/2929/images/8925/8925.240.png",
+      "https://colombo.pro/wa-data/public/shop/products/24/29/2924/images/8938/8938.240.png",
+      "https://colombo.pro/wa-data/public/shop/products/19/29/2919/images/8221/8221.750x0.png"
+     ],
+     "local_images": [
+      "dvernaya-ruchka-colombo-design-one-cc11rsb-c03-tsvet-chernyy-6ab736.jpg",
+      "dvernaya-ruchka-colombo-design-one-cc11rsb-c03-tsvet-chernyy-10a5e5.jpg",
+      "dvernaya-ruchka-colombo-design-one-cc11rsb-c03-tsvet-chernyy-3a8657.jpg",
+      "dvernaya-ruchka-colombo-design-one-cc11rsb-c03-tsvet-chernyy-bdbec7.jpg",
+      "dvernaya-ruchka-colombo-design-one-cc11rsb-c03-tsvet-chernyy-6f8e92.jpg",
+      "dvernaya-ruchka-colombo-design-one-cc11rsb-c03-tsvet-chernyy-02f839.jpg"
+     ],
+     "url": "https://colombo.pro/product/Colombo-Design-ONE-CC11RSB.C03/",
+     "source": "page:microdata"
+    }
+   ]
+  }
+ ]
+}

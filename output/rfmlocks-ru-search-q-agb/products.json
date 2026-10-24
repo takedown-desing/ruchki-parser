@@ -1,0 +1,87 @@
+{
+ "site": "https://rfmlocks.ru/search/?q=AGB",
+ "when": "2026-10-24 11:08",
+ "how": "страницы сайта",
+ "models": [
+  {
+   "name": "Ответная планка EASY-MATIC",
+   "brand": "AGB",
+   "sku": "B01402",
+   "category": [
+    "Дверные замки и цилиндры"
+   ],
+   "description": "Ответная планка EASY-MATIC для замков серии Polaris 2XT и для дверей с европритвором к замкам серии Mediana Evolution.\nС этим товаром покупают магнитный вкладыш для замков Polaris 2XT или пластиковый вкладыш для замков Mediana Evolution.\nОтветная планка продается в комплекте с замком.",
+   "specs": {
+    "Индивидуальный цвет": "Хром матовый",
+    "Страна": "Италия",
+    "Размер, мм": "22х82"
+   },
+   "url": "https://rfmlocks.ru/catalog/dvernye-zamki-i-tsilindry/B01402.11.34/",
+   "variants": [
+    {
+     "finish": "хром матовый B01402.11.34 AGB",
+     "sku": "B01402.11.34",
+     "price": 250.0,
+     "currency": "RUB",
+     "in_stock": true,
+     "images": [
+      "https://rfmlocks.ru/upload/iblock/258/2581a4032d96c1a941c87aed5208060f.jpg",
+      "https://rfmlocks.ru/upload/iblock/000/0008124f17f51632e62e84d16ebe88bd.webp",
+      "https://rfmlocks.ru/upload/iblock/000/0008124f17f51632e62e84d16ebe88bd.jpg",
+      "https://rfmlocks.ru/upload/medialibrary/898/rg7as6mr2ivo9u43yle27ts08zfzh4gb.jpg"
+     ],
+     "local_images": [
+      "otvetnaya-planka-easy-matic-tsvet-hrom-matovyy-b01402-11-34-50f156.jpg",
+      "otvetnaya-planka-easy-matic-tsvet-hrom-matovyy-b01402-11-34-62289e.jpg",
+      "otvetnaya-planka-easy-matic-tsvet-hrom-matovyy-b01402-11-34-d4e401.jpg",
+      "otvetnaya-planka-easy-matic-tsvet-hrom-matovyy-b01402-11-34-229403.jpg"
+     ],
+     "url": "https://rfmlocks.ru/catalog/dvernye-zamki-i-tsilindry/B01402.11.34/",
+     "source": "page:jsonld"
+    },
+    {
+     "finish": "латунь глянцевая B01402.14.03 AGB",
+     "sku": "B01402.14.03",
+     "price": 150.0,
+     "currency": "RUB",
+     "in_stock": true,
+     "images": [
+      "https://rfmlocks.ru/upload/iblock/5f5/5f594b4c14fcb2290c3adc50fe948f8f.jpg",
+      "https://rfmlocks.ru/upload/iblock/b0f/b0fa2c84de15e119c63f4914dad17fa8.webp",
+      "https://rfmlocks.ru/upload/iblock/b0f/b0fa2c84de15e119c63f4914dad17fa8.jpg",
+      "https://rfmlocks.ru/upload/medialibrary/898/rg7as6mr2ivo9u43yle27ts08zfzh4gb.jpg"
+     ],
+     "local_images": [
+      "otvetnaya-planka-easy-matic-tsvet-latun-glyantsevaya-b01402-9eb8b0.jpg",
+      "otvetnaya-planka-easy-matic-tsvet-latun-glyantsevaya-b01402-b1e4f8.jpg",
+      "otvetnaya-planka-easy-matic-tsvet-latun-glyantsevaya-b01402-184617.jpg",
+      "otvetnaya-planka-easy-matic-tsvet-latun-glyantsevaya-b01402-229403.jpg"
+     ],
+     "url": "https://rfmlocks.ru/catalog/dvernye-zamki-i-tsilindry/B01402.14.03/",
+     "source": "page:jsonld"
+    },
+    {
+     "finish": "никель глянцевый B01402.14.06 AGB",
+     "sku": "B01402.14.06",
+     "price": 150.0,
+     "currency": "RUB",
+     "in_stock": true,
+     "images": [
+      "https://rfmlocks.ru/upload/iblock/363/363609192cd008707b27a2c62b88d1b7.jpg",
+      "https://rfmlocks.ru/upload/iblock/856/8563c1cc76c351571ccee7966f49f3a3.webp",
+      "https://rfmlocks.ru/upload/iblock/856/8563c1cc76c351571ccee7966f49f3a3.jpg",
+      "https://rfmlocks.ru/upload/medialibrary/898/rg7as6mr2ivo9u43yle27ts08zfzh4gb.jpg"
+     ],
+     "local_images": [
+      "otvetnaya-planka-easy-matic-tsvet-nikel-glyantsevyy-b01402-1-f2692c.jpg",
+      "otvetnaya-planka-easy-matic-tsvet-nikel-glyantsevyy-b01402-1-ea9617.jpg",
+      "otvetnaya-planka-easy-matic-tsvet-nikel-glyantsevyy-b01402-1-887151.jpg",
+      "otvetnaya-planka-easy-matic-tsvet-nikel-glyantsevyy-b01402-1-229403.jpg"
+     ],
+     "url": "https://rfmlocks.ru/catalog/dvernye-zamki-i-tsilindry/B01402.14.06/",
+     "source": "page:jsonld"
+    }
+   ]
+  }
+ ]
+}

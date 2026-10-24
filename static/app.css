@@ -74,3 +74,7 @@ details summary { cursor: pointer; color: var(--accent-dark); font-size: 13.5px;
 .empty { padding: 30px; text-align: center; color: var(--muted); }
 .flash { padding: 10px 14px; border-radius: 8px; background: var(--ok-bg); color: var(--ok); margin-bottom: 14px; }
 @media (max-width: 900px) { form.grid, .grid2 { grid-template-columns: 1fr; } .stats { grid-template-columns: repeat(3, 1fr); } }
+.reason { color: var(--err); margin-top: 4px; max-width: 340px; }
+.warn-text { color: var(--warn); margin-top: 3px; }
+.card.stop { border-color: #f3c3bd; background: var(--err-bg); color: var(--err); }
+.card.warn { border-color: #f0d58c; background: var(--warn-bg); color: var(--warn); }

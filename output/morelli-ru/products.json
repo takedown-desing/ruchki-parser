@@ -1,0 +1,130 @@
+{
+ "site": "https://morelli.ru/",
+ "when": "2026-10-24 11:24",
+ "how": "страницы сайта",
+ "models": [
+  {
+   "name": "Ручка дверная FIORD S5 CAFFE раздельная на квадратной розетке",
+   "brand": "Morelli",
+   "sku": "9012306",
+   "category": [
+    "Официальный сайт Morelli в Москве",
+    "Каталог дверной фурнитуры",
+    "Ручки"
+   ],
+   "description": "Итальянские дверные ручки из серии \"LUXURY\": NEW ERA олицетворяют достижения современных технологий и архитектуры. Модели применяются на межкомнатных дверях различного типа.Концептуальное решение для широкого примененияСрок службы - не менее 7 лет при правильной эксплуатации. Гарантия - 1 год.",
+   "specs": {
+    "Наличие": "больше 50",
+    "Форма розетки": "квадратная",
+    "Тип": "На розетке",
+    "Материал": "ЦАМ",
+    "Коллекция": "ECO"
+   },
+   "url": "https://morelli.ru/catalog/ruchki/all/95",
+   "variants": [
+    {
+     "finish": "кофе, ЦАМ",
+     "sku": "9012306",
+     "price": 6370.0,
+     "currency": "RUB",
+     "in_stock": true,
+     "images": [
+      "https://morelli.ru/products/January2020/3FtwSl4p4nbC9Wj1NAqG.webp",
+      "https://morelli.ru/storage/products/January2020/3FtwSl4p4nbC9Wj1NAqG.webp",
+      "https://morelli.ru/storage/products/January2020/MQduhUHfCfP3nBRTVv3E.webp",
+      "https://morelli.ru/storage/products/August2022/MVY3gnH5WAAMRkSijAt5.webp",
+      "https://morelli.ru/catalog/ruchki/all/products/January2020/3FtwSl4p4nbC9Wj1NAqG.webp"
+     ],
+     "local_images": [
+      "ruchka-dvernaya-fiord-s5-caffe-razdelnaya-na-kvadratnoy-roze-3de739.jpg",
+      "ruchka-dvernaya-fiord-s5-caffe-razdelnaya-na-kvadratnoy-roze-d159cf.jpg"
+     ],
+     "url": "https://morelli.ru/catalog/ruchki/all/95",
+     "source": "page:jsonld"
+    }
+   ]
+  },
+  {
+   "name": "Ручка дверная FIORD S5 CRO раздельная на квадратной розетке",
+   "brand": "Morelli",
+   "sku": "9012307",
+   "category": [
+    "Официальный сайт Morelli в Москве",
+    "Каталог дверной фурнитуры",
+    "Ручки"
+   ],
+   "description": "Итальянские дверные ручки из серии \"LUXURY\": NEW ERA олицетворяют достижения современных технологий и архитектуры. Модели применяются на межкомнатных дверях различного типа.Концептуальное решение для широкого примененияСрок службы - не менее 7 лет при правильной эксплуатации. Гарантия - 1 год.",
+   "specs": {
+    "Наличие": "меньше 50",
+    "Форма розетки": "квадратная",
+    "Тип": "На розетке",
+    "Материал": "ЦАМ",
+    "Коллекция": "ECO"
+   },
+   "url": "https://morelli.ru/catalog/ruchki/all/96",
+   "variants": [
+    {
+     "finish": "хром, ЦАМ",
+     "sku": "9012307",
+     "price": 6960.0,
+     "currency": "RUB",
+     "in_stock": true,
+     "images": [
+      "https://morelli.ru/products/January2020/DtVIqLkbv54aiJcOoV5w.webp",
+      "https://morelli.ru/storage/products/January2020/DtVIqLkbv54aiJcOoV5w.webp",
+      "https://morelli.ru/storage/products/January2020/WDFECVbeoFuu6bQ7BbAQ.webp",
+      "https://morelli.ru/storage/products/August2022/wupCklEvObAtSqW9uAUI.webp",
+      "https://morelli.ru/catalog/ruchki/all/products/January2020/DtVIqLkbv54aiJcOoV5w.webp"
+     ],
+     "local_images": [
+      "ruchka-dvernaya-fiord-s5-cro-razdelnaya-na-kvadratnoy-rozetk-a7c8ea.jpg",
+      "ruchka-dvernaya-fiord-s5-cro-razdelnaya-na-kvadratnoy-rozetk-2b6d66.jpg"
+     ],
+     "url": "https://morelli.ru/catalog/ruchki/all/96",
+     "source": "page:jsonld"
+    }
+   ]
+  },
+  {
+   "name": "Ручка дверная FIORD S5 CSA раздельная на квадратной розетке",
+   "brand": "Morelli",
+   "sku": "9012305",
+   "category": [
+    "Официальный сайт Morelli в Москве",
+    "Каталог дверной фурнитуры",
+    "Ручки"
+   ],
+   "description": "Итальянские дверные ручки из серии \"LUXURY\": NEW ERA олицетворяют достижения современных технологий и архитектуры. Модели применяются на межкомнатных дверях различного типа.Концептуальное решение для широкого примененияСрок службы - не менее 7 лет при правильной эксплуатации. Гарантия - 1 год.",
+   "specs": {
+    "Наличие": "меньше 50",
+    "Форма розетки": "квадратная",
+    "Тип": "На розетке",
+    "Материал": "ЦАМ",
+    "Коллекция": "ECO"
+   },
+   "url": "https://morelli.ru/catalog/ruchki/all/97",
+   "variants": [
+    {
+     "finish": "матовый хром, ЦАМ",
+     "sku": "9012305",
+     "price": 6370.0,
+     "currency": "RUB",
+     "in_stock": true,
+     "images": [
+      "https://morelli.ru/products/January2020/2zEA0dBROLATHFDg4oNE.webp",
+      "https://morelli.ru/storage/products/January2020/2zEA0dBROLATHFDg4oNE.webp",
+      "https://morelli.ru/storage/products/January2020/XzghUaFEwhouUdMpxqJZ.webp",
+      "https://morelli.ru/storage/products/August2022/Oat6VzDs0AnK0lxvF4Zj.webp",
+      "https://morelli.ru/catalog/ruchki/all/products/January2020/2zEA0dBROLATHFDg4oNE.webp"
+     ],
+     "local_images": [
+      "ruchka-dvernaya-fiord-s5-csa-razdelnaya-na-kvadratnoy-rozetk-0f8126.jpg",
+      "ruchka-dvernaya-fiord-s5-csa-razdelnaya-na-kvadratnoy-rozetk-ff8840.jpg"
+     ],
+     "url": "https://morelli.ru/catalog/ruchki/all/97",
+     "source": "page:jsonld"
+    }
+   ]
+  }
+ ]
+}

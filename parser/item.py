@@ -20,6 +20,13 @@ def clean_text(s, html=False):
         s = re.sub(r'(?i)<br\s*/?>|</p>|</li>|</h\d>', '\n', s)
         s = re.sub(r'<[^>]+>', ' ', s)
     s = htmllib.unescape(s).replace('\xa0', ' ')
+    if re.search(r'â€|Ã[\x80-\xbf]|Ð[\x80-\xbf]', s):
+        # текст в UTF-8, прочитанный как latin-1/cp1252: «â€“» → «–»
+        for enc in ('cp1252', 'latin-1'):
+            try:
+                s = s.encode(enc).decode('utf-8'); break
+            except (UnicodeEncodeError, UnicodeDecodeError):
+                continue
     s = re.sub(r'[ \t\r\f\v]+', ' ', s)
     s = re.sub(r'\s*\n\s*', '\n', s)
     return s.strip()

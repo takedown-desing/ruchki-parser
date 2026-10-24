@@ -1,0 +1,131 @@
+{
+ "site": "https://www.kronakoblenz.com/en/products",
+ "when": "2026-10-24 11:51",
+ "how": "страницы сайта",
+ "models": [
+  {
+   "name": "Performance",
+   "brand": "Kronakoblenz",
+   "sku": "",
+   "category": [],
+   "description": "",
+   "specs": {},
+   "url": "https://www.kronakoblenz.com/en/performance-c37378",
+   "variants": [
+    {
+     "finish": "",
+     "sku": "",
+     "price": null,
+     "currency": "RUB",
+     "in_stock": null,
+     "images": [
+      "https://www.kronakoblenz.com/products/imports/koblenz/Cerniere/atomika/8000/image-thumb__5908__koblenzProductList/serie-premium-k8000.jpg",
+      "https://www.kronakoblenz.com/products/imports/koblenz/Cerniere/atomika/8000/image-thumb__5908__koblenzProductList/serie-premium-k8000@2x.jpg",
+      "https://www.kronakoblenz.com/products/imports/koblenz/Cerniere/atomika/8060/image-thumb__5909__koblenzProductList/serie-performance-k8060.jpg",
+      "https://www.kronakoblenz.com/products/imports/koblenz/Cerniere/atomika/8060/image-thumb__5909__koblenzProductList/serie-performance-k8060@2x.jpg",
+      "https://www.kronakoblenz.com/products/imports/koblenz/Cerniere/atomika/8080/image-thumb__5911__koblenzProductList/k8080-menu.jpg",
+      "https://www.kronakoblenz.com/products/imports/koblenz/Cerniere/atomika/8080/image-thumb__5911__koblenzProductList/k8080-menu@2x.jpg",
+      "https://www.kronakoblenz.com/products/imports/koblenz/Cerniere/atomika/image-thumb__4731__koblenzProductList/serie-performance-k8120.jpg",
+      "https://www.kronakoblenz.com/products/imports/koblenz/Cerniere/atomika/image-thumb__4731__koblenzProductList/serie-performance-k8120@2x.jpg",
+      "https://www.kronakoblenz.com/products/imports/koblenz/Cerniere/kubi7/7316/image-thumb__5935__koblenzProductList/serie-performance-k7316.jpg",
+      "https://www.kronakoblenz.com/products/imports/koblenz/Cerniere/kubi7/7316/image-thumb__5935__koblenzProductList/serie-performance-k7316@2x.jpg"
+     ],
+     "local_images": [
+      "performance-9879e0.jpg",
+      "performance-93513c.jpg",
+      "performance-463c4e.jpg",
+      "performance-e16cfa.jpg",
+      "performance-167b66.jpg",
+      "performance-0f6be6.jpg"
+     ],
+     "url": "https://www.kronakoblenz.com/en/performance-c37378",
+     "source": "page:dom"
+    }
+   ]
+  },
+  {
+   "name": "Evolution",
+   "brand": "Kronakoblenz",
+   "sku": "",
+   "category": [],
+   "description": "",
+   "specs": {},
+   "url": "https://www.kronakoblenz.com/en/evolution-c37422",
+   "variants": [
+    {
+     "finish": "",
+     "sku": "",
+     "price": null,
+     "currency": "RUB",
+     "in_stock": null,
+     "images": [
+      "https://www.kronakoblenz.com/products/imports/koblenz/Cerniere/kombi/1019/image-thumb__5907__koblenzProductList/serie-evolution-k1019.jpg",
+      "https://www.kronakoblenz.com/products/imports/koblenz/Cerniere/kombi/1019/image-thumb__5907__koblenzProductList/serie-evolution-k1019@2x.jpg",
+      "https://www.kronakoblenz.com/products/imports/koblenz/Cerniere/kombi/101926/image-thumb__8385__koblenzProductList/serie-evolution-k1019-26.jpg",
+      "https://www.kronakoblenz.com/products/imports/koblenz/Cerniere/kombi/101926/image-thumb__8385__koblenzProductList/serie-evolution-k1019-26@2x.jpg",
+      "https://www.kronakoblenz.com/products/imports/koblenz/Cerniere/kombi/101930/image-thumb__8367__koblenzProductList/serie-evolution-k1019-30.jpg",
+      "https://www.kronakoblenz.com/products/imports/koblenz/Cerniere/kombi/101930/image-thumb__8367__koblenzProductList/serie-evolution-k1019-30@2x.jpg",
+      "https://www.kronakoblenz.com/products/imports/koblenz/Cerniere/kombi/101934/image-thumb__8388__koblenzProductList/serie-evolution-k1019-34.jpg",
+      "https://www.kronakoblenz.com/products/imports/koblenz/Cerniere/kombi/101934/image-thumb__8388__koblenzProductList/serie-evolution-k1019-34@2x.jpg",
+      "https://www.kronakoblenz.com/products/imports/koblenz/Cerniere/image-thumb__9464__koblenzProductList/k1060.jpg",
+      "https://www.kronakoblenz.com/products/imports/koblenz/Cerniere/image-thumb__9464__koblenzProductList/k1060@2x.jpg",
+      "https://www.kronakoblenz.com/products/imports/koblenz/Cerniere/image-thumb__9465__koblenzProductList/k1060-26.jpg",
+      "https://www.kronakoblenz.com/products/imports/koblenz/Cerniere/image-thumb__9465__koblenzProductList/k1060-26@2x.jpg"
+     ],
+     "local_images": [
+      "evolution-9cc2ac.jpg",
+      "evolution-f8b44f.jpg",
+      "evolution-6aa3d4.jpg",
+      "evolution-4dc7b8.jpg",
+      "evolution-773e02.jpg",
+      "evolution-93b43c.jpg"
+     ],
+     "url": "https://www.kronakoblenz.com/en/evolution-c37422",
+     "source": "page:dom"
+    }
+   ]
+  },
+  {
+   "name": "Classic",
+   "brand": "Kronakoblenz",
+   "sku": "",
+   "category": [],
+   "description": "",
+   "specs": {},
+   "url": "https://www.kronakoblenz.com/en/classic-c37615",
+   "variants": [
+    {
+     "finish": "",
+     "sku": "",
+     "price": null,
+     "currency": "RUB",
+     "in_stock": null,
+     "images": [
+      "https://www.kronakoblenz.com/products/imports/koblenz/Cerniere/image-thumb__9480__koblenzProductList/k6100-menu.jpg",
+      "https://www.kronakoblenz.com/products/imports/koblenz/Cerniere/image-thumb__9480__koblenzProductList/k6100-menu@2x.jpg",
+      "https://www.kronakoblenz.com/products/imports/koblenz/Cerniere/kubica/6400/image-thumb__5931__koblenzProductList/k6400-u.jpg",
+      "https://www.kronakoblenz.com/products/imports/koblenz/Cerniere/kubica/6400/image-thumb__5931__koblenzProductList/k6400-u@2x.jpg",
+      "https://www.kronakoblenz.com/products/imports/koblenz/Cerniere/kubi7/7000/image-thumb__5939__koblenzProductList/serie-classic-k7000.jpg",
+      "https://www.kronakoblenz.com/products/imports/koblenz/Cerniere/kubi7/7000/image-thumb__5939__koblenzProductList/serie-classic-k7000@2x.jpg",
+      "https://www.kronakoblenz.com/products/imports/koblenz/Cerniere/kubica/6200/image-thumb__5542__koblenzProductList/k6200-menu.jpg",
+      "https://www.kronakoblenz.com/products/imports/koblenz/Cerniere/kubica/6200/image-thumb__5542__koblenzProductList/k6200-menu@2x.jpg",
+      "https://www.kronakoblenz.com/products/imports/koblenz/Cerniere/kubica/3000/image-thumb__5920__koblenzProductList/k3000-menu.jpg",
+      "https://www.kronakoblenz.com/products/imports/koblenz/Cerniere/kubica/3000/image-thumb__5920__koblenzProductList/k3000-menu@2x.jpg",
+      "https://www.kronakoblenz.com/products/imports/koblenz/Cerniere/kubica/6700/image-thumb__5932__koblenzProductList/k6700-u.jpg",
+      "https://www.kronakoblenz.com/products/imports/koblenz/Cerniere/kubica/6700/image-thumb__5932__koblenzProductList/k6700-u@2x.jpg"
+     ],
+     "local_images": [
+      "classic-cd3379.jpg",
+      "classic-afa08e.jpg",
+      "classic-423089.jpg",
+      "classic-363fd8.jpg",
+      "classic-1b4397.jpg",
+      "classic-3f974e.jpg"
+     ],
+     "url": "https://www.kronakoblenz.com/en/classic-c37615",
+     "source": "page:dom"
+    }
+   ]
+  }
+ ]
+}

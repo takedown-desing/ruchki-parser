@@ -1,0 +1,38 @@
+[
+ {
+  "when": "2026-10-24 11:28",
+  "ok": true,
+  "how": "страницы сайта",
+  "models": 3,
+  "variants": 3,
+  "images": 12,
+  "no_price": 0,
+  "no_photo": 0,
+  "changes": {
+   "new": 2,
+   "gone": 2,
+   "price": 1,
+   "stock": 1
+  },
+  "seconds": 23,
+  "warnings": []
+ },
+ {
+  "when": "2026-10-24 11:18",
+  "ok": true,
+  "how": "страницы сайта",
+  "models": 1,
+  "variants": 3,
+  "images": 18,
+  "no_price": 0,
+  "no_photo": 0,
+  "changes": {
+   "new": 3,
+   "gone": 0,
+   "price": 0,
+   "stock": 0
+  },
+  "seconds": 32,
+  "warnings": []
+ }
+]

@@ -1,0 +1,136 @@
+{
+ "site": "https://furmatica.ru/",
+ "when": "2026-10-24 11:02",
+ "how": "страницы сайта",
+ "models": [
+  {
+   "name": "Marion",
+   "brand": "",
+   "sku": "",
+   "category": [
+    "Ручки",
+    "Fimet Modern"
+   ],
+   "description": "",
+   "specs": {},
+   "url": "https://furmatica.ru/fimet-modern/marion",
+   "variants": [
+    {
+     "finish": "",
+     "sku": "",
+     "price": null,
+     "currency": "RUB",
+     "in_stock": null,
+     "images": [
+      "https://cdn.prod.website-files.com/64ddfc15040e946dbbc56d26/64e8a0713a32b1b85d195e01_64e656965cca030f6bcbc5a5_Fimet.png",
+      "https://cdn.prod.website-files.com/64ddfc15040e946dbbc56d26/64ec5394dacb057e3f3674f9_MARION-1444-208-F01.webp",
+      "https://cdn.prod.website-files.com/64ddfc15040e946dbbc56d26/64ec5397d26d5926f45ece44_MARION-1444-208-F02.webp",
+      "https://cdn.prod.website-files.com/64ddfc15040e946dbbc56d26/64ec5399909086a1f6a4da81_MARION-1444-208-F04.webp",
+      "https://cdn.prod.website-files.com/64ddfc15040e946dbbc56d26/64ec5401e7b32fbe8bb291be_MARION-1444-208-F05.webp",
+      "https://cdn.prod.website-files.com/64ddfc15040e946dbbc56d26/64ec538c8fd73b1b205f3077_MARION-1444-208-F20.webp",
+      "https://cdn.prod.website-files.com/64ddfc15040e946dbbc56d26/64ec5407ec1cda0a02269b81_MARION-1444-208-F43.webp",
+      "https://cdn.prod.website-files.com/64ddfc15040e946dbbc56d26/64ec54098adc76ab8ce2ba01_MARION-1444-208-F-NO.webp",
+      "https://cdn.prod.website-files.com/64ddfc15040e946dbbc56d26/64ede5d3e2665cdf291969aa_203%20wc%20f01.webp",
+      "https://cdn.prod.website-files.com/64ddfc15040e946dbbc56d26/651166892a404baf7a47e615_203%20cylinder%20no.png",
+      "https://cdn.prod.website-files.com/64ddfc15040e946dbbc56d26/6502b25c93b1197f48b7a706_MARION.webp",
+      "https://cdn.prod.website-files.com/64dde94487950ac09072ed7f/6500b1119bde63249039d505_no%20foto.png"
+     ],
+     "local_images": [
+      "marion-73446d.jpg",
+      "marion-044e08.jpg",
+      "marion-20628b.jpg",
+      "marion-e736f6.jpg",
+      "marion-05a636.jpg"
+     ],
+     "url": "https://furmatica.ru/fimet-modern/marion",
+     "source": "page:dom"
+    }
+   ]
+  },
+  {
+   "name": "Punto",
+   "brand": "",
+   "sku": "",
+   "category": [
+    "Ручки",
+    "Fimet Modern"
+   ],
+   "description": "",
+   "specs": {},
+   "url": "https://furmatica.ru/fimet-modern/punto",
+   "variants": [
+    {
+     "finish": "",
+     "sku": "",
+     "price": null,
+     "currency": "RUB",
+     "in_stock": null,
+     "images": [
+      "https://cdn.prod.website-files.com/64ddfc15040e946dbbc56d26/64e8a07146f8310cbb0d3bcd_64e656965cca030f6bcbc5a5_Fimet.png",
+      "https://cdn.prod.website-files.com/64ddfc15040e946dbbc56d26/64ec5488469214acf05ef497_PUNTO-1205-208-F04.webp",
+      "https://cdn.prod.website-files.com/64ddfc15040e946dbbc56d26/64ec548aefda7074b33be185_PUNTO-1205-208-F05.webp",
+      "https://cdn.prod.website-files.com/64ddfc15040e946dbbc56d26/64ec548d9f92b72fe44610a5_PUNTO-1205-208-F15.webp",
+      "https://cdn.prod.website-files.com/64ddfc15040e946dbbc56d26/64ec548f25a667d3c33a8b90_PUNTO-1205-208-FBO.webp",
+      "https://cdn.prod.website-files.com/64ddfc15040e946dbbc56d26/64ec54827913e82b3415f783_PUNTO-1205-208-F-NO.webp",
+      "https://cdn.prod.website-files.com/64ddfc15040e946dbbc56d26/64ede5d3e2665cdf291969aa_203%20wc%20f01.webp",
+      "https://cdn.prod.website-files.com/64ddfc15040e946dbbc56d26/651166892a404baf7a47e615_203%20cylinder%20no.png",
+      "https://cdn.prod.website-files.com/64ddfc15040e946dbbc56d26/6502b28eb16745671e838475_PUNTO-208.webp",
+      "https://cdn.prod.website-files.com/64dde94487950ac09072ed7f/6500b1119bde63249039d505_no%20foto.png"
+     ],
+     "local_images": [
+      "punto-36d401.jpg",
+      "punto-a3d85e.jpg",
+      "punto-b5dcf0.jpg",
+      "punto-2eb63f.jpg",
+      "punto-3f5ce4.jpg"
+     ],
+     "url": "https://furmatica.ru/fimet-modern/punto",
+     "source": "page:dom"
+    }
+   ]
+  },
+  {
+   "name": "Plana",
+   "brand": "",
+   "sku": "",
+   "category": [
+    "Ручки",
+    "Fimet Modern"
+   ],
+   "description": "",
+   "specs": {},
+   "url": "https://furmatica.ru/fimet-modern/plana",
+   "variants": [
+    {
+     "finish": "",
+     "sku": "",
+     "price": null,
+     "currency": "RUB",
+     "in_stock": null,
+     "images": [
+      "https://cdn.prod.website-files.com/64ddfc15040e946dbbc56d26/64e8a0713a32b1b85d195e01_64e656965cca030f6bcbc5a5_Fimet.png",
+      "https://cdn.prod.website-files.com/64ddfc15040e946dbbc56d26/64ec5441f3b88c6a601aa85a_PLANA-1200-208-F01.webp",
+      "https://cdn.prod.website-files.com/64ddfc15040e946dbbc56d26/64ec544925a667d3c33a5043_PLANA-1200-208-F02O.webp",
+      "https://cdn.prod.website-files.com/64ddfc15040e946dbbc56d26/64ec544c340c2e1d87d786bc_PLANA-1200-F04.webp",
+      "https://cdn.prod.website-files.com/64ddfc15040e946dbbc56d26/64ec544f716bd9dea096a1e0_PLANA-1200-F05.webp",
+      "https://cdn.prod.website-files.com/64ddfc15040e946dbbc56d26/64ec5451cdbfa4e558d7680e_PLANA-1200-F15.webp",
+      "https://cdn.prod.website-files.com/64ddfc15040e946dbbc56d26/64ec545435fe83d6a0ac6884_PLANA-1200-F-NO.webp",
+      "https://cdn.prod.website-files.com/64ddfc15040e946dbbc56d26/64ede5d3e2665cdf291969aa_203%20wc%20f01.webp",
+      "https://cdn.prod.website-files.com/64ddfc15040e946dbbc56d26/651166892a404baf7a47e615_203%20cylinder%20no.png",
+      "https://cdn.prod.website-files.com/64ddfc15040e946dbbc56d26/6502b274e0a72ede5b7bb766_PLANA.webp",
+      "https://cdn.prod.website-files.com/64dde94487950ac09072ed7f/6500b1119bde63249039d505_no%20foto.png"
+     ],
+     "local_images": [
+      "plana-4b6578.jpg",
+      "plana-00fa36.jpg",
+      "plana-816628.jpg",
+      "plana-744679.jpg",
+      "plana-aae9cd.jpg"
+     ],
+     "url": "https://furmatica.ru/fimet-modern/plana",
+     "source": "page:dom"
+    }
+   ]
+  }
+ ]
+}

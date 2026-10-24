@@ -1,0 +1,59 @@
+{
+ "site": "https://kronakoblenz.ru/colombo-design/handles/contemporary",
+ "when": "2026-10-24 11:10",
+ "how": "страницы сайта",
+ "models": [
+  {
+   "name": "ID313 Q – ID413 YQ",
+   "brand": "Colombo Design",
+   "sku": "",
+   "category": [],
+   "description": "Детальная страница ручки ID313 Q – ID413 YQ: галерея, отделки и брошюры Colombo Design.",
+   "specs": {},
+   "url": "https://kronakoblenz.ru/colombo-design/handles/id313-q-id413-yq",
+   "variants": [
+    {
+     "finish": "",
+     "sku": "",
+     "price": null,
+     "currency": "RUB",
+     "in_stock": null,
+     "images": [
+      "https://kronakoblenz.ru/assets/images/hero-desktop.webp"
+     ],
+     "local_images": [
+      "id313-q-id413-yq-286f40.jpg"
+     ],
+     "url": "https://kronakoblenz.ru/colombo-design/handles/id313-q-id413-yq",
+     "source": "page:dom"
+    }
+   ]
+  },
+  {
+   "name": "GRYPS",
+   "brand": "Colombo Design",
+   "sku": "",
+   "category": [],
+   "description": "Детальная страница ручки DL 16 – DL 113 GRYPS: галерея, отделки и брошюры Colombo Design.",
+   "specs": {},
+   "url": "https://kronakoblenz.ru/colombo-design/handles/dl-16-dl-113-gryps",
+   "variants": [
+    {
+     "finish": "",
+     "sku": "",
+     "price": null,
+     "currency": "RUB",
+     "in_stock": null,
+     "images": [
+      "https://kronakoblenz.ru/assets/images/hero-desktop.webp"
+     ],
+     "local_images": [
+      "gryps-286f40.jpg"
+     ],
+     "url": "https://kronakoblenz.ru/colombo-design/handles/dl-16-dl-113-gryps",
+     "source": "page:dom"
+    }
+   ]
+  }
+ ]
+}

@@ -1,0 +1,133 @@
+{
+ "site": "https://www.tupai.pt/",
+ "when": "2026-10-24 11:01",
+ "how": "страницы сайта",
+ "models": [
+  {
+   "name": "Ref. 1781 / 1782 / 1783 / 1786",
+   "brand": "Tupai",
+   "sku": "",
+   "category": [],
+   "description": "",
+   "specs": {},
+   "url": "https://www.tupai.pt/en/catalogo/ref-1781-1782-1783-1786/",
+   "variants": [
+    {
+     "finish": "",
+     "sku": "",
+     "price": null,
+     "currency": "RUB",
+     "in_stock": null,
+     "images": [
+      "https://www.tupai.pt/wp-content/uploads/2018/04/1781-16-ao-inox-satinado.jpg",
+      "https://www.tupai.pt/wp-content/uploads/2022/12/small_141.jpg",
+      "https://www.tupai.pt/wp-content/uploads/2022/12/small_152.jpg",
+      "https://www.tupai.pt/wp-content/uploads/2022/12/small_153.jpg",
+      "https://www.tupai.pt/wp-content/uploads/2018/04/tupai-1781-1782-1783-1786-dt-1024x1024.png",
+      "https://www.tupai.pt/wp-content/uploads/2018/04/1781-16-ao-inox-satinado-600x352.jpg",
+      "https://www.tupai.pt/wp-content/uploads/2018/04/finish.png",
+      "https://www.tupai.pt/wp-content/uploads/2022/12/small_141-680x400_c.jpg",
+      "https://www.tupai.pt/wp-content/uploads/2022/12/small_152-680x400_c.jpg",
+      "https://www.tupai.pt/wp-content/uploads/2022/12/small_153-680x400_c.jpg",
+      "https://www.tupai.pt/wp-content/uploads/2018/04/discription.png",
+      "https://www.tupai.pt/wp-content/uploads/2018/04/design.png"
+     ],
+     "local_images": [
+      "ref-1781-1782-1783-1786-b4d910.jpg",
+      "ref-1781-1782-1783-1786-454d17.jpg",
+      "ref-1781-1782-1783-1786-4eb3b2.jpg",
+      "ref-1781-1782-1783-1786-631441.jpg",
+      "ref-1781-1782-1783-1786-6f50f1.jpg",
+      "ref-1781-1782-1783-1786-3f43f3.jpg"
+     ],
+     "url": "https://www.tupai.pt/en/catalogo/ref-1781-1782-1783-1786/",
+     "source": "page:dom"
+    }
+   ]
+  },
+  {
+   "name": "REF. 2006 Fixed",
+   "brand": "Tupai",
+   "sku": "",
+   "category": [],
+   "description": "",
+   "specs": {},
+   "url": "https://www.tupai.pt/en/catalogo/ref-2006-fixed/",
+   "variants": [
+    {
+     "finish": "",
+     "sku": "",
+     "price": null,
+     "currency": "RUB",
+     "in_stock": null,
+     "images": [
+      "https://www.tupai.pt/wp-content/uploads/2021/06/small_16.jpg",
+      "https://www.tupai.pt/wp-content/uploads/2022/12/small_141.jpg",
+      "https://www.tupai.pt/wp-content/uploads/2023/06/small_142-4.jpg",
+      "https://www.tupai.pt/wp-content/uploads/2022/12/small_152.jpg",
+      "https://www.tupai.pt/wp-content/uploads/2023/06/small_153-2.jpg",
+      "https://www.tupai.pt/wp-content/uploads/2018/05/tupai-dt-2006-img.jpg",
+      "https://www.tupai.pt/wp-content/uploads/2018/07/tupai-ref.2006-016-grande.jpeg",
+      "https://www.tupai.pt/wp-content/uploads/2018/07/tupai-ref.2006-016-grande-600x461.jpeg",
+      "https://www.tupai.pt/wp-content/uploads/2018/04/finish.png",
+      "https://www.tupai.pt/wp-content/uploads/2021/06/small_16-680x400_c.jpg",
+      "https://www.tupai.pt/wp-content/uploads/2022/12/small_141-680x400_c.jpg",
+      "https://www.tupai.pt/wp-content/uploads/2023/06/small_142-4-680x400_c.jpg"
+     ],
+     "local_images": [
+      "ref-2006-fixed-27007b.jpg",
+      "ref-2006-fixed-454d17.jpg",
+      "ref-2006-fixed-98240e.jpg",
+      "ref-2006-fixed-4eb3b2.jpg",
+      "ref-2006-fixed-f153a1.jpg",
+      "ref-2006-fixed-1097ec.jpg"
+     ],
+     "url": "https://www.tupai.pt/en/catalogo/ref-2006-fixed/",
+     "source": "page:dom"
+    }
+   ]
+  },
+  {
+   "name": "REF. 4084 5RE",
+   "brand": "Tupai",
+   "sku": "",
+   "category": [],
+   "description": "",
+   "specs": {},
+   "url": "https://www.tupai.pt/en/catalogo/ref-4084-5re/",
+   "variants": [
+    {
+     "finish": "",
+     "sku": "",
+     "price": null,
+     "currency": "RUB",
+     "in_stock": null,
+     "images": [
+      "https://www.tupai.pt/wp-content/uploads/2024/01/4084-5re-96.jpg",
+      "https://www.tupai.pt/wp-content/uploads/2024/01/4084-5re-141.jpg",
+      "https://www.tupai.pt/wp-content/uploads/2024/01/4084-5re-142.jpg",
+      "https://www.tupai.pt/wp-content/uploads/2024/01/4084-5re-152.jpg",
+      "https://www.tupai.pt/wp-content/uploads/2024/01/4084-5re-153.jpg",
+      "https://www.tupai.pt/wp-content/uploads/2024/01/4084-5re-208.jpg",
+      "https://www.tupai.pt/wp-content/uploads/2024/01/tupai-ref.4084-5re-096-grande.jpeg",
+      "https://www.tupai.pt/wp-content/uploads/2024/01/tupai-ref.4084-5re-096-grande-600x360.jpeg",
+      "https://www.tupai.pt/wp-content/uploads/2018/04/finish.png",
+      "https://www.tupai.pt/wp-content/uploads/2024/01/4084-5re-96-680x400_c.jpg",
+      "https://www.tupai.pt/wp-content/uploads/2024/01/4084-5re-141-680x400_c.jpg",
+      "https://www.tupai.pt/wp-content/uploads/2024/01/4084-5re-142-680x400_c.jpg"
+     ],
+     "local_images": [
+      "ref-4084-5re-8d614b.jpg",
+      "ref-4084-5re-3b381b.jpg",
+      "ref-4084-5re-6f899c.jpg",
+      "ref-4084-5re-ac125e.jpg",
+      "ref-4084-5re-05daf6.jpg",
+      "ref-4084-5re-fdc7e6.jpg"
+     ],
+     "url": "https://www.tupai.pt/en/catalogo/ref-4084-5re/",
+     "source": "page:dom"
+    }
+   ]
+  }
+ ]
+}

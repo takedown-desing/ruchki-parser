@@ -1,0 +1,20 @@
+[
+ {
+  "when": "2026-10-24 11:00",
+  "ok": true,
+  "how": "фид yml",
+  "models": 1,
+  "variants": 3,
+  "images": 2,
+  "no_price": 0,
+  "no_photo": 1,
+  "changes": {
+   "new": 3,
+   "gone": 0,
+   "price": 0,
+   "stock": 0
+  },
+  "seconds": 0,
+  "warnings": []
+ }
+]

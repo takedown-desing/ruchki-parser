@@ -7,6 +7,8 @@ fi
 if [ ! -x .venv/bin/python ]; then
   echo "Первый запуск: готовлю окружение, это займёт минуту…"
   python3 -m venv .venv && .venv/bin/pip install -q --upgrade pip && .venv/bin/pip install -q -r requirements.txt || { echo "Не удалось установить библиотеки"; read -r; exit 1; }
+  echo "Ставлю браузер для сайтов на скриптах (около 100 МБ, один раз)…"
+  .venv/bin/python -m playwright install chromium >/dev/null 2>&1 || echo "Браузер не установился: сайты на скриптах будут собираться без него"
 fi
 git pull -q 2>/dev/null
 echo "Админка парсера: http://127.0.0.1:8765  (окно не закрывайте, пока работаете)"

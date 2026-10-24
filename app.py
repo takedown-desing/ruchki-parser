@@ -64,6 +64,7 @@ def save_settings(sid):
     fields = {'url': f.get('url', '').strip(), 'name': f.get('name', '').strip(), 'brand': f.get('brand', '').strip(),
               'filter': f.get('filter', '').strip(), 'limit': int(f.get('limit') or 0), 'merge': bool(f.get('merge')),
               'use_description': bool(f.get('use_description')), 'method': f.get('method', 'auto'),
+              'render': f.get('render', 'auto'),
               'feed_url': f.get('feed_url', '').strip()}
     if not fields['feed_url']:
         fields['feed_kind'] = ''

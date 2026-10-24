@@ -44,12 +44,14 @@
       <tr>
         <td><a href="{{ url_for('site_page', sid=s.id) }}"><b>{{ s.name }}</b></a><div class="url">{{ s.url }}</div>
           {% if s.brand or s.filter %}<div class="small muted">{% if s.brand %}бренд: {{ s.brand }}{% endif %}{% if s.filter %} · отбор: «{{ s.filter }}»{% endif %}</div>{% endif %}</td>
-        <td>{% if lr.error %}<span class="tag err">ошибка</span>
+        <td>{% if lr.stopped %}<span class="tag err">не собирается</span><div class="small reason">{{ lr.problem }}</div>
+            {% elif lr.error %}<span class="tag err">ошибка</span><div class="small reason">{{ lr.error }}</div>
             {% elif lr.how and lr.how.startswith('фид') %}<span class="tag feed">{{ lr.how }}</span>
             {% elif lr.how %}<span class="tag pages">{{ lr.how }}</span>
             {% else %}<span class="tag">ещё не собирали</span>{% endif %}</td>
         <td class="small">{% if lr.when %}{{ lr.when }}<div class="muted">{% if s.limit %}проба: до {{ s.limit }} тов.{% else %}все товары{% endif %}</div>{% else %}—{% endif %}</td>
-        <td class="num">{% if lr.models is defined %}{{ lr.models }} / {{ lr.variants }}<div class="small muted">фото {{ lr.images }}{% if lr.no_price %}, без цены {{ lr.no_price }}{% endif %}</div>{% else %}—{% endif %}</td>
+        <td class="num">{% if lr.models is defined %}{{ lr.models }} / {{ lr.variants }}<div class="small muted">фото {{ lr.images }}{% if lr.no_price %}, без цены {{ lr.no_price }}{% endif %}</div>{% else %}—{% endif %}
+          {% if lr.warnings %}<div class="small warn-text" title="{{ lr.warnings | join('; ') }}">есть замечания</div>{% endif %}</td>
         <td class="chg small">{% if lr.changes %}
             {% if lr.changes.new %}<span class="new">+{{ lr.changes.new }} новых</span>{% endif %}
             {% if lr.changes.price %}<span class="price">цена: {{ lr.changes.price }}</span>{% endif %}

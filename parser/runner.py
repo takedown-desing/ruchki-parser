@@ -3,8 +3,9 @@ import os
 import threading
 import time
 import traceback
+from urllib.parse import urlsplit
 
-from . import discover, feeds, pages, store, excel, gitsync
+from . import discover, feeds, pages, store, excel, gitsync, browser, diagnose
 from .http import Fetcher
 from .images import save_image
 from .item import slug
@@ -55,6 +56,15 @@ def _run_all(job, push):
                 summary = run_site(site, job.log)
                 job.result[sid] = summary
                 done.append(f'{site["name"]}: {summary["models"]} мод., {summary["variants"]} покр.')
+            except diagnose.Stop as e:
+                job.log(f'ОСТАНОВЛЕНО: {e.reason}')
+                lr = {'when': time.strftime('%Y-%m-%d %H:%M'), 'ok': False, 'stopped': True, 'problem': e.reason}
+                store.update(sid, last_run=lr)
+                hist_path = os.path.join(store.site_dir(sid), 'history.json')
+                hist = store.load_json(hist_path, [])
+                hist.insert(0, lr); store.save_json(hist_path, hist[:100])
+                job.result[sid] = {'problem': e.reason}
+                done.append(f'{site["name"]}: остановлен')
             except Exception as e:
                 job.log(f'ОШИБКА: {e}')
                 job.log(traceback.format_exc().splitlines()[-1])
@@ -66,12 +76,18 @@ def _run_all(job, push):
         job.progress = 'готово'
 
 
-def collect_items(site, fx, log):
+def collect_items(site, fx, log, rd=None, state=None):
     """Товары сайта списком записей. Сначала фид, потом страницы."""
     url = site['url'].strip()
     limit = int(site.get('limit') or 0)
-    kw = (site.get('filter') or '').strip() or discover.keyword_of(url)
+    # слово из адреса поиска (?q=FIMET) отбирает товары фида; со страниц поиска сайт уже отобрал товары сам,
+    # поэтому для страниц работает только явная настройка «Отбор по слову»
+    own_kw = (site.get('filter') or '').strip()
+    kw = own_kw or discover.keyword_of(url)
     method, feed_url, kind = site.get('method', 'auto'), site.get('feed_url') or '', site.get('feed_kind') or ''
+    problem = diagnose.access_problem(fx, feed_url or url)
+    if problem:
+        raise diagnose.Stop(problem)
     if method in ('auto', 'feed') and not feed_url:
         feed_url, kind = discover.find_feed(fx, url, log)
         if feed_url:
@@ -90,7 +106,12 @@ def collect_items(site, fx, log):
         if limit:
             items = items[:limit]
     if not items and method in ('auto', 'pages'):
-        items = collect_pages(site, fx, log, url, limit, kw)
+        items = collect_pages(site, fx, log, url, limit, kw, rd, state)
+        if not items and kw and not own_kw and state.get('named'):
+            # поиск сайта уже отобрал товары, а в их названиях нет слова поиска (свой сайт бренда): берём без отбора
+            log(f'Под «{kw}» ни одна карточка не подошла, беру результаты поиска без отбора по слову')
+            state['samples'] = []
+            items = collect_pages(site, fx, log, url, limit, '', rd, state)
         how = 'страницы сайта'
     return items, how
 
@@ -103,13 +124,16 @@ def matches(it, kw):
     return all(w in hay for w in kw.lower().split())
 
 
-def collect_pages(site, fx, log, url, limit, kw):
+def collect_pages(site, fx, log, url, limit, kw, rd=None, state=None):
     if discover.is_root(url):
         cands = discover.rank_candidates(discover.sitemap_urls(fx, discover.site_root(url), log), kw)
-        if not cands:
+        if not cands or len(cands) < (limit or 3) * 3:
             home = fx.get(url) or ''
-            cands = pages.product_links(home, url)
-            log(f'Карты сайта нет, ссылок с главной: {len(cands)}')
+            cands = cands + [c for c in pages.product_links(home, url) if c not in cands]
+            # мало ссылок на товары: разделы каталога из меню, товары возьмутся из них
+            cats = pages.catalog_links(home, url)
+            cands += [c for c in cats if c not in cands]
+            log(f'Карты сайта нет или в ней мало товаров: ссылок с главной {len(cands)}, из них разделов каталога {len(cats)}')
     else:
         cands, page, guard = [], url, 0
         while page and guard < 20 and (not limit or len(cands) < limit * 5):
@@ -120,28 +144,108 @@ def collect_pages(site, fx, log, url, limit, kw):
                 cands = [page]; break
             cands += [c for c in pages.product_links(html, page) if c not in cands]
             page = pages.next_page(html, page); guard += 1
+        if len(cands) < 3 and rd and state and state['mode'] != 'never':
+            html = rd.get(url) or ''
+            more = [c for c in pages.product_links(html, url) if c not in cands]
+            if more:
+                log(f'Список товаров достроен скриптом: в браузере {len(more)} ссылок')
+                cands += more; state['mode'] = 'always'
         log(f'Ссылок на товары со страницы списка: {len(cands)}')
-    items, tried = [], 0
-    max_try = (limit * (40 if kw else 6) + 10) if limit else len(cands)
-    for c in cands:
+    if state is not None:
+        state['candidates'] = state.get('candidates', 0) + len(cands)
+    items, tried = try_candidates(fx, log, cands, limit, kw, trusted=not discover.is_root(url), rd=rd, state=state)
+    if not items and not discover.is_root(url):
+        # со страницы списка ничего: карта сайта в пределах того же раздела адресов (/en/ → только /en/…)
+        prefix = urlsplit(url).path.rstrip('/') + '/'
+        urls = [u for u in discover.sitemap_urls(fx, discover.site_root(url), log) if urlsplit(u).path.startswith(prefix)]
+        if urls:
+            log(f'Пробую карту сайта в разделе {prefix}: {len(urls)} адресов')
+            state['candidates'] = state.get('candidates', 0) + len(urls)
+            more, t2 = try_candidates(fx, log, discover.rank_candidates(urls, kw), limit, kw, rd=rd, state=state)
+            items += more; tried += t2
+    log(f'Собрано со страниц: {len(items)} (проверено адресов: {tried})')
+    return items
+
+
+def _judge(html, c, trust):
+    """(запись товара или None, это раздел?) для одной страницы."""
+    sure = pages.is_product_page(html)
+    listing = pages.is_listing(html, c)
+    if listing:
+        # раздел, даже если у него разметка товара (Битрикс ставит AggregateOffer и на разделы)
+        return None, True
+    if not sure and (not (trust or pages.STRONG_HINT.search(c)) or listing or pages.is_article(html)):
+        return None, listing
+    it = pages.extract(html, c)
+    if it and pages.looks_like_section_name(it['name']) and pages.card_grid(html, c) >= 8:
+        # «Дверные ручки FORME» с сеткой карточек: это раздел, товары берутся из него
+        return None, True
+    if it and not sure and len(it['images']) < 1:
+        return None, listing
+    return it, listing
+
+
+def try_candidates(fx, log, cands, limit, kw, trusted=False, rd=None, state=None):
+    """Открывает адреса по очереди и оставляет карточки товаров. Раздел вместо карточки: берёт ссылки из него, на один уровень.
+    trusted: адреса взяты из списка товаров на странице сайта, поэтому «товарный» вид адреса не обязателен.
+    rd: браузер без окна. В режиме auto пробуется на первых трёх страницах без фото; помог — дальше все страницы через него."""
+    state = state if state is not None else {'mode': 'never'}
+    items, tried, seen = [], 0, set(cands)
+    queue = [(c, 0, trusted) for c in cands]
+    max_try = (limit * (15 if kw else 8) + 12) if limit else len(cands) * 2
+    while queue:
+        c, depth, trust = queue.pop(0)
         if limit and len(items) >= limit or tried >= max_try:
             break
         tried += 1
         html = fx.get(c)
-        if not html or not pages.is_product_page(html):
+        if rd and state['mode'] == 'always':
+            html = rd.get(c) or html
+        if not html:
             continue
-        it = pages.extract(html, c)
+        it, listing = _judge(html, c, trust)
+        if rd and state['mode'] == 'auto' and state.get('tries', 0) < 3 and not listing and (it is None or not it['images']) \
+                and (trust or pages.STRONG_HINT.search(c)):
+            state['tries'] = state.get('tries', 0) + 1
+            rhtml = rd.get(c)
+            if rhtml:
+                it2, listing2 = _judge(rhtml, c, trust)
+                if it2 and it2['images']:
+                    log('  браузер нашёл то, чего нет в разметке страницы: дальше открываю страницы сайта в браузере')
+                    state['mode'] = 'always'
+                    it, listing, html = it2, listing2, rhtml
+        if len(state.setdefault('samples', [])) < 8 and not (it and it.get('images')):
+            # для диагностики нужна и отброшенная запись: название есть, а фото нет
+            raw = it if it else (None if listing else pages.extract(html, c))
+            state['samples'].append((c, html, raw))
+        if listing and depth == 0:
+            kids = [k for k in pages.product_links(html, c, limit=max(12, limit * 4) if limit else 200) if k not in seen]
+            seen.update(kids)
+            state['candidates'] = state.get('candidates', 0) + len(kids)
+            queue = [(k, 1, True) for k in kids] + queue
+        if it and it['name']:
+            state['named'] = state.get('named', 0) + 1
         if it and it['name'] and matches(it, kw):
             items.append(it)
             log(f'  товар: {it["name"][:70]} | {it["price"] or "без цены"} | фото {len(it["images"])} | {it["source"]}')
-    log(f'Собрано со страниц: {len(items)} (проверено адресов: {tried})')
-    return items
+    return items, tried
 
 
 def run_site(site, log):
     t0 = time.time()
     fx = Fetcher(delay=float(site.get('delay') or 1.0), log=log)
-    items, how = collect_items(site, fx, log)
+    render = site.get('render') or 'auto'
+    rd = browser.Renderer(log) if render != 'never' and browser.available() else None
+    state = {'mode': render if rd else 'never'}
+    try:
+        items, how = collect_items(site, fx, log, rd, state)
+    finally:
+        if rd:
+            rd.close()
+    if state.get('mode') == 'always' and how == 'страницы сайта':
+        how = 'страницы сайта (через браузер)'
+    if not items:
+        raise diagnose.Stop(diagnose.empty_reason(state, (site.get('filter') or '').strip(), search=discover.keyword_of(site['url'])))
     folder = store.site_dir(site['id'])
     img_dir = os.path.join(folder, 'images')
     n_img = 0
@@ -166,7 +270,8 @@ def run_site(site, log):
     summary = {'when': when, 'ok': True, 'how': how, 'models': len(models), 'variants': n_rows, 'images': n_img,
                'no_price': sum(1 for m in models for v in m['variants'] if not v['price']),
                'no_photo': sum(1 for m in models for v in m['variants'] if not v['images']),
-               'changes': {k: len(v) for k, v in changes.items()}, 'seconds': int(time.time() - t0)}
+               'changes': {k: len(v) for k, v in changes.items()}, 'seconds': int(time.time() - t0),
+               'warnings': diagnose.warnings_for(models)}
     hist.insert(0, summary)
     store.save_json(os.path.join(folder, 'history.json'), hist[:100])
     store.update(site['id'], last_run=summary)

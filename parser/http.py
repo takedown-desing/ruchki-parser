@@ -16,7 +16,7 @@ CACHE_DIR = os.path.join(ROOT, 'cache')
 class Fetcher:
     """GET с паузой между запросами к одному сайту и кэшем ответов (кэш живёт в папке cache/, в git не попадает)."""
 
-    def __init__(self, delay=1.0, timeout=30, use_cache=True, cache_ttl=6 * 3600, log=None):
+    def __init__(self, delay=1.0, timeout=90, use_cache=True, cache_ttl=6 * 3600, log=None):
         self.delay = delay
         self.timeout = timeout
         self.use_cache = use_cache
@@ -44,8 +44,10 @@ class Fetcher:
         if self.use_cache and not max_bytes and os.path.exists(cp) and time.time() - os.path.getmtime(cp) < self.cache_ttl:
             with open(cp, 'rb') as f:
                 data = f.read()
+            self.last_status, self.last_body, self.last_exc = 200, '', None
             return data if binary else data.decode('utf-8', 'replace')
         last_err = None
+        self.last_status, self.last_body, self.last_exc, self.last_headers = None, '', None, ''
         for attempt in range(retries + 1):
             if delay is None:
                 self._wait(url)
@@ -56,6 +58,12 @@ class Fetcher:
                 if r.status_code in (429, 503) and attempt < retries:
                     time.sleep(5 * (attempt + 1)); continue
                 if r.status_code >= 400:
+                    self.last_status = r.status_code
+                    self.last_headers = '\n'.join(f'{k}: {v}' for k, v in r.headers.items())
+                    try:
+                        self.last_body = r.text[:20000]
+                    except Exception:
+                        self.last_body = ''
                     if not quiet:
                         self.log(f'  {r.status_code} {url}')
                     return None
@@ -69,6 +77,7 @@ class Fetcher:
                 else:
                     raw = r.content
                 self.last_url = r.url
+                self.last_status = r.status_code
                 self.last_type = r.headers.get('Content-Type', '')
                 if binary:
                     data = raw
@@ -85,6 +94,7 @@ class Fetcher:
                 return data
             except requests.RequestException as e:
                 last_err = e
+                self.last_exc = e
                 time.sleep(2 * (attempt + 1))
         if not quiet:
             self.log(f'  нет ответа: {url} ({type(last_err).__name__})')
